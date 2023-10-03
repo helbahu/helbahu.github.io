@@ -1,0 +1,55 @@
+html{
+    background-color: rgb(15, 32, 18);
+}
+#bodyinfo{
+    background-color: rgb(15, 32, 18);
+}
+/*Header code*/
+
+.headerx{
+    background-color: rgb(54, 54, 54);
+    color: rgb(176, 176, 255);
+    padding-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo{
+    width: 100px;
+}
+.navx{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div .categoriesx{
+    color: rgb(212, 212, 0);
+}
+div .badge{
+    font-size: 40px;
+}
+#selectedpage{
+    background-color: rgb(31, 31, 31);
+}
+
+
+/*About Us*/
+
+.forestbg{
+    width: 100%;
+    margin: 0px;
+    opacity: 40%;
+    position: absolute;
+}
+.zindexx{
+    z-index: 1;
+    margin-top: 100px;
+    opacity: 80%;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
