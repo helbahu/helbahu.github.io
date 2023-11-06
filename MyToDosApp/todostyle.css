@@ -1,0 +1,298 @@
+body{
+    margin: 0px;
+}
+
+/* Buttons */
+.submitInfo{
+    height: 3vh;
+    width: 10vh;
+    border-radius: 2vh;
+    font-size: 2vh;
+}
+.header .submitInfo{
+    width: 12vh;
+    height: 4.5vh;
+    font-size: 1.6vh;
+}
+
+
+
+/* Header */
+.header{
+    height: 10vh;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainHeading{
+    margin-left: auto;
+    font-size: 5vh;
+}
+.header button{
+    margin-left: auto;
+    margin-right: 2vh;
+}
+
+/* App Themes */
+.light1{
+    background-color: #4DFFF3;
+}
+.light1 .header, .light1 .activeForm, .light1 .todoBox{
+    background-color: #3dc7be;
+}
+.light1 .submitInfo{
+    background-color: #c29cf7;
+}
+.light1 .submitInfo:hover{
+    background-color: #e0ccff;
+}
+.light1 .todoItem{
+    background-color: #2a8f88;
+}
+
+
+.light2{
+    background-color: #52FFB8;
+}
+.light2 .header, .light2 .activeForm, .light2 .todoBox{
+    background-color: #41c48d;
+}
+.light2 .submitInfo{
+    background-color: #ffa886;
+}
+.light2 .submitInfo:hover{
+    background-color: #fac7b2;
+}
+.light2 .todoItem{
+    background-color: #2d8560;
+}
+
+
+
+.dark1{
+    background-color: #539987;
+}
+.dark1 .header, .dark1 .activeForm, .dark1 .todoBox{
+    background-color: #39695d;
+}
+.dark1 .submitInfo{
+    background-color: #43c58f;
+}
+.dark1 .submitInfo:hover{
+    background-color: #52FFB8;
+}
+.dark1 .todoItem{
+    background-color: #223f38;
+    color: white;
+}
+.dark1 .completed{
+    color: rgb(173, 173, 173);
+}
+
+
+
+.dark2{
+    background-color: #5E5768;
+    color:white;
+}
+.dark2 .header, .dark2 .activeForm, .dark2 .todoBox{
+    background-color: #40384d;
+    color:white;
+}
+.dark2 .submitInfo{
+    background-color: #df6230;
+    color: white;
+}
+.dark2 .submitInfo:hover{
+    background-color: #FF8A5B;
+}
+.dark2 .todoItem{
+    background-color: #342846;
+    color: white;
+}
+.dark2 .completed{  
+    color: rgb(173, 173, 173);
+}
+
+
+
+
+
+
+
+/* Form Settings */
+.activeForm{
+    box-sizing: border-box;
+    width: 80vw;
+    height: 28vh;
+    margin-top: 3vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border-radius: 2vh;
+    padding: 0.6vh 3vh;
+    text-align: center;
+}
+.activeForm form{
+    display: flex;
+    flex-direction: column;
+}
+form *{
+    margin-bottom: 1vh;
+    font-weight: bold;
+}
+
+.activeForm>.formHeading{
+    font-size: 2.5vh;
+}
+
+.inactiveForm{
+    display: none;
+}
+.inactiveFormToDo{
+    display: none;
+}
+
+
+
+/* ToDo Section */
+.todoBox{
+    box-sizing: border-box;
+    width: 90vw;
+    margin-top: 3vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 1vh;
+    padding: 0.6vh 3vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10vh;
+}
+.todoBoxHeader{
+    margin-bottom: 3vh;
+}
+.todoBoxHeader button{
+    background-color: #2affa6;
+    box-sizing: border-box;
+    text-align: center;
+    width: 90%;
+    font-size: 2vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.todoBoxHeader button:hover{
+    background-color: #9dffd6;
+}
+.todoForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+}
+#todoForm{
+    margin-bottom: 8vh;
+}
+#titleToDo{
+    box-sizing: border-box;
+    width: 90%;
+}
+table *{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+table #otherDetails{
+    position: relative;
+    width: 100%;
+}
+table #submitItem{
+    width: 60%;
+    position: absolute;
+    left: 20%;
+}
+
+
+.todoItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vh;
+    border-radius: 4vh;
+    margin-bottom: 2vh;
+    padding: 2vh;
+}
+.checkBox{
+    width: 4vh;
+    height: 4vh;
+}
+.dropDown{
+    background-color: #00bbae;
+    color: #ffffff;
+    width: 5vh;
+    height: 5vh;
+    font-size: 3.5vh;
+}
+.dropDown:hover{
+    background-color: #5ffff4;
+}
+
+.deleteItem{
+    background-color: #ff3a3a;
+    color: #ffffff;
+    width: 5vh;
+    height: 5vh;
+    font-size: 3vh;
+    border-radius: 2.5vh;
+    border-style: solid;
+}
+.deleteItem:hover{
+    background-color: #ff7878;        
+}
+.titleElement, .completed{
+    width: 70%;
+}
+.completed{
+    text-decoration: line-through;
+    color: rgb(48, 48, 48);
+}
+
+
+.inactiveDropDownBox{
+    display: none;
+}
+.dropDownBox{
+    width: 100%;
+    padding: 2vh 6vh;
+    font-size: 3vh;
+}
+
+
+
+
+
+
+/* Media */
+@media (min-width: 600px){
+    .activeForm{
+        height: 25vh;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    
+    }
+
+}
+
+@media (min-width: 730px){
+    .submitInfo{
+        height: 4vh;
+        width: 10vh;
+        border-radius: 2vh;
+        font-size: 2.3vh;
+    }
+    .activeForm{
+        width: 70vw;
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+}

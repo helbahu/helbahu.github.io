@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDos</title>
+    <link rel="stylesheet" href="todostyle.css">
+</head>
+ <body class="light1">
+    <div class="header">
+        <h1 class="mainHeading">Welcome!</h1>
+        <button class="submitInfo" value="changePreferences">Change Preferences</button>
+    </div>
+    <div id="preferenceFormBox" class="activeForm">
+        <h2 class="formHeading">Customize your ToDo Page by telling us your name and choose a theme!</h2>
+
+        <form id="preferenceForm">
+            <label for="name">Name: 
+                <input type="text" name="name" id="name">
+            </label>
+            <label for="theme">Choose a Theme:
+                <select name="theme" id="theme">
+                    <option value="">-- Select Theme --</option>
+                    <option value="light1">Sandard - Light Theme 1</option>
+                    <option value="light2">Light Theme 2</option>
+                    <option value="dark1">Dark Theme 1</option>
+                    <option value="dark2">Dark Theme 2</option>
+                </select>    
+            </label>
+            <label for="submitInfo">
+                <input type="submit" name="submitInfo" id="submitInfo" class="submitInfo" value="Submit">
+            </label>
+        </form>
+    
+    </div>
+    <div class="todoBox">
+        <div class="todoBoxHeader">
+            <h1><center>Todo List</center></h1>
+            <button value="addItem"><span>&#9776</span> Add Item</button>
+        </div>
+        <table id="todoForm" class="inactiveFormToDo">
+            <form class="todoForm">
+                <tr>
+                    <td>
+                        <label for="titleToDo">Title: </label>
+                    </td>
+                    <td>
+                        <input type="text" name="titleToDo" id="titleToDo" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="otherDetails">Details: </label>    
+                    </td>
+                    <td>
+                        <textarea name="otherDetails" id="otherDetails" cols="80" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="priority">Choose a Theme: </label>        
+                    </td>
+                    <td>
+                        <select name="priority" id="priority">
+                            <option value=".noPriority">No Priority</option>
+                            <option value=".midPriority">Medium Priority</option>
+                            <option value=".highPriority">High Priority</option>
+                        </select>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="submitItem">
+                            <input type="submit" name="submitItem" class="submitInfo" id="submitItem" value="addNewItem">
+                        </label>        
+                    </td>
+                </tr>
+            </form>
+    
+        </table>
+        <div class="highPriority"></div>
+        <div class="midPriority"></div>
+        <div class="noPriority"></div>
+    </div>
+
+    <script src="todo.js"></script>
+ </body>
+</html>
