@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Madness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body class="default">
+    <!-- This is the main page -->
+    <div id="main" class="default">
+        <div class="title">
+            <h1>Memory Madness</h1>
+        </div>
+        <button value="menuPlay">Play</button>
+        <button value="menuGenre">Genre</button>
+        <button value="menuSettings">Settings</button>
+        <button value="menuAchievements">Achievements</button>
+    </div>
+
+    <!-- This is the Genre page to select which cards you want to play with -->
+    <div id="genre" class="inactive">
+        <button value="genreAll" class="genreBtn btnSelected">All</button>
+        <button value="genreMythology" class="genreBtn">Mythology</button>
+        <button value="genreHorror" class="genreBtn">Horror</button>
+        <button value="genreAnimals" class="genreBtn">Animals</button>
+        <button value="backToMain" class="back">Back</button>
+        
+    </div>
+
+    <!-- Settings -->
+    <div id="settings" class="inactive">
+        <button value="modeToggle" id="modeText">Mode: Default</button>
+        <button value="colorToggle" id="colorText">Gameplay Color: Enabled</button>
+        <button value="backToMain" class="back">Back</button>
+    </div>
+
+    <!-- Achievments -->
+    <div id="achievments" class="inactive">
+        <table class="achievmentsTable">
+
+            <thead>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Best Time</th>
+                    <th>Guesses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Easy</td>
+                    <td id="timeEasy">-</td>
+                    <td id="guessEasy">-</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td id="timeMedium">-</td>
+                    <td id="guessMedium">-</td>
+                </tr>
+                <tr>
+                    <td>Hard</td>
+                    <td id="timeHard">-</td>
+                    <td id="guessHard">-</td>
+                </tr>
+                <tr>
+                    <td>Very Hard</td>
+                    <td id="timeVeryHard">-</td>
+                    <td id="guessVeryHard">-</td>
+                </tr>
+            </tbody>
+        </table>
+        <button value="backToMain" class="back">Back</button>
+    </div>
+
+    <!-- Difficulty -->
+    <div id="difficulty" class="inactive">
+        <div class="instructionsDiff"><h1>Please select a difficulty!</h1></div>
+        <button value="easy" class="diffBtn">Easy</button>
+        <button value="medium" class="diffBtn">Medium</button>
+        <button value="hard" class="diffBtn">Hard</button>
+        <button value="very hard" class="diffBtn">Very Hard</button>
+        <button value="startGame">Start Game!</button>
+        <button value="backToMain" class="back">Back</button>
+    </div>
+
+    <!-- Game Table: This is where the game is played -->
+    <div id="gameTable" class="inactive">
+        <!-- This is the header with the timer and the Quit button -->
+        <div id="gameTableInterface">
+            <h1 id="guessVal">Score: <span id="guessValSpan">0</span></h1>
+            <h1 id="timer">00:00:00</h1>
+            <button value="clear">Quit</button>
+            <!-- These are notifications that will be activated at the start and end of a game respectively -->
+            <div id="letsPlayNotification" class="inactive">
+                <div>
+                    <h1>How to Play</h1>
+                    <p>
+                        The goal of the game is to match all the cards as fast as you can. 
+                        Good Luck!                         
+                    </p>
+                    <button value="letsPlay">Let's Play</button>
+                </div>
+            </div>
+            <div id="gameOverNotification" class="inactive">
+                <div>
+                    <h1>Congratulations!</h1>
+                    <p>
+                    </p>
+                    <p></p>
+                    <p></p>
+                    <div>
+                        <button value="clear1">Play Again</button>
+                        <button value="clear">Main Menu</button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- This is where the cards will get appended to -->
+        <div id="cardContainer">
+
+        </div>
+ 
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

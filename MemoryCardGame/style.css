@@ -1,0 +1,455 @@
+body{
+    font-family: 'Permanent Marker', cursive;
+}
+#main .title{
+    font-size: 3.2vh;
+    color: #1f1d27;
+    height: 8vh;
+}
+#main .title h1{
+    position: relative;
+    bottom: 15vh;
+    text-align: center;
+}
+
+
+body.default{
+    background-color: #D52941;
+    display: block;
+    margin: 0vw;
+    color: #3f3c49;
+}
+body.dark{
+    background-color: #443f55;
+    display: block;
+    color: #CEDFD9;
+    margin: 0vw;
+}
+body.bright{
+    background-color:#59b4ec;
+    display: block;
+    margin: 0vw;
+    color: #3f3c49;
+}
+.inactive{
+    display: none;
+}
+
+
+/* HOME PAGE */
+
+.default, .dark, .bright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20vh 20vw;
+}
+.default button, .dark button, .bright button{
+    margin-bottom: 10vh;
+    width: 80vw;
+    height: 6vh;
+    border-radius: 3vh;
+    border:#565264 0.2vw solid;
+    font-size: 4vh;
+    padding: 0vw;
+    
+}
+#difficulty button{
+    margin-bottom: 6vh;
+}
+
+.default button{
+    background-color: #91c4b3;
+    color: #3f3c49;
+}
+.default button:hover{
+    background-color: #CEDFD9;
+}
+.default button.btnSelected{
+    background-color: #61a18c;
+    border-style: inset;
+}
+
+.dark button{
+    background-color:#D52941;
+    color: #CEDFD9;
+}
+.dark button:hover{
+    background-color:#d63f53;
+}
+.dark button.btnSelected{
+    background-color:#a71f31;
+    border-style: inset;
+}
+
+.bright button{
+    background-color:#25c2af;
+    color: #3f3c49;
+}
+.bright button:hover{
+    background-color:#33ffe7;
+}
+.bright button.btnSelected{
+    background-color:#1da192;
+    border-style: inset;
+}
+
+
+div button.back{
+    width: 15vh;
+    height: 15vh;
+    border-radius: 100%;
+    padding: 1vw 2vw;
+}
+
+/* Achievements */
+.achievmentsTable{
+    text-align: center;
+    font-size: 4vh;
+    width: 80vw;
+    margin-bottom: 14vh;
+}
+.default .achievmentsTable{
+    color: black;
+}
+
+
+/* Difficulty Screen */
+.instructionsDiff, .instructionsDiffWarning{
+position: absolute;
+    top: 3vw;
+font-size: 2vw;
+color: #CEDFD9;
+}
+
+.bright .instructionsDiff, .bright .instructionsDiffWarning{
+    color: #3f3c49;
+}
+.instructionsDiffWarning{
+    transform: scale(1.04);
+    animation: shake 200ms ease-in 3;
+}
+@keyframes shake {
+    0%{
+        transform: rotate(0deg);
+        transform: scale(1.04);
+    }
+    33%{
+        transform: rotate(1deg);
+    }
+    66%{
+        transform: rotate(-1deg);
+    }
+    100%{
+        transform: rotate(0deg);
+        transform: scale(1.04);
+    }
+    
+}
+
+
+
+/* Game Table */
+#cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0vw 10vw;
+    padding: 0vw;
+    width: 100%;
+}
+#gameTable{
+    margin: 0vw;
+}
+#gameTableInterface{
+    width: 100vw;
+    height: 9vh;
+    margin-bottom: 3vw;
+    margin-top: 0vw;
+    background-color: #61a18c;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+.dark #gameTableInterface{
+    background-color:#0f6359;
+}
+#gameTableInterface>button{
+    width: 10vh;
+    height: 4vh;
+    align-self: center;
+    position: absolute;
+    right: 3vw;
+    top: 2vh;
+    font-size: 3vh;
+}
+#gameTableInterface #timer{
+    align-self: center;
+}
+#gameTableInterface #guessVal{
+    align-self: center;
+    position: absolute;
+    left: 5vw;
+}
+#gameTableInterface #timer, #gameTableInterface #guessVal{
+    font-size: 3vh;   
+}
+
+
+
+
+
+.notifications{
+    position: absolute;
+    z-index: 2;
+    top: 0vw;
+    left: 0vw;
+    width: 100%;
+    height: 100%;  
+    display: flex;
+    justify-content: center;
+    padding-top: 15vh;
+}
+.notifications>*{
+    width: 80vw;
+    height: 50vh;
+    background-color:#159687;
+    border:#94a09c solid 2vh;
+    border-radius: 4vh;
+    text-align: center;
+    padding: 2vh;
+    margin: 0vh 3vw;
+    font-size: 2em;
+}
+
+#gameOverNotification.notifications>*{
+    font-size: 4vw;
+    height: 70vh;
+}
+
+.notifications button{
+    width: 50vw;
+    padding: 1vh;
+    height: auto;
+}
+.notifications div p{
+    font-size: 3vh;
+}
+.dark .notifications>*{
+    background-color:#0f6359;
+}
+
+
+.easyGrid>*, .mediumGrid>*, .hardGrid>*, .veryHardGrid>*{
+    margin-bottom: 1vh;
+    padding: 0vw;
+    display: flex;
+    justify-content: center;
+}
+
+.easyGrid>*{
+    width: 30%;
+}
+.easyGrid img{
+    max-height: 20vh;
+    max-width: 100%;
+}
+.easyGrid div{
+    height: 20vh;
+}
+
+
+.mediumGrid>*{
+    width: 25%;
+}
+.mediumGrid img{
+    max-height: 16vh;
+    max-width: 100%;
+}
+.mediumGrid div{
+    height: 16vh;
+}
+
+
+.hardGrid>*{
+    width: 20%;
+}
+.hardGrid img{
+    max-height: 14vh;
+    max-width: 100%;
+}
+.hardGrid div{
+    height: 14vh;
+}
+
+
+.veryHardGrid>*{
+    width: 20%;
+}
+.veryHardGrid img{
+    max-height: 10vh;
+    max-width: 100%;
+}
+.veryHardGrid div{
+    height: 14vh;
+}
+
+
+/* Cards */
+.cardDiv{
+    position: relative;
+}
+.card{
+    position: relative;
+    transition: scale 100ms;
+}
+.card:hover{
+    scale: 1.1;
+    z-index: 1; 
+}
+
+.cardClick{
+    animation: flip 600ms linear;
+}
+
+@keyframes flip {
+    0%{
+        transform: rotate3d(0,1,0,0deg); 
+    }
+    50%{
+        transform: rotate3d(0,1,0,90deg);
+    }
+    100%{
+        transform: rotate3d(0,1,0,0deg); 
+    }
+}
+
+
+/* MEDIA */
+
+@media (min-width: 700px){
+    .default button, .dark button, .bright button{
+        width: 60vw;
+    }
+    .achievmentsTable{
+        width: 60vw;
+    }
+
+    .hardGrid>*{
+        width: 16.5%;
+    }
+    .hardGrid img{
+        max-height: 16vh;
+    }
+    .hardGrid div{
+        height: 16vh;
+    }
+
+    .veryHardGrid>*{
+        width: 12.5%;
+    }
+    .veryHardGrid img{
+        max-height: 16vh;
+    }
+    .veryHardGrid div{
+        height: 16vh;
+    }
+
+    .notifications>*{
+        height: 50vh;
+    }
+    .notifications div p{
+        font-size: 4vh;
+    }
+    #gameOverNotification.notifications>*{
+        font-size: 1.8vw;
+        height: 78vh;   
+    }
+
+
+    #main .title{
+        font-size: 3.5vh;
+    }
+    
+    #gameTableInterface>button{
+        width: 12vh;
+        height: 6vh;
+        font-size: 4vh;
+        top: 1vh;
+    }
+    
+    #gameTableInterface #timer, #gameTableInterface #guessVal{
+        font-size: 5vh;   
+    }
+
+}
+@media (min-width: 1000px){
+    .default button, .dark button, .bright button{
+        width: 40vw;
+    }
+    .achievmentsTable{
+        width: 50vw;
+    }
+    .easyGrid>*{
+        max-width: 25%;
+        min-height: 50%;
+    }
+    .easyGrid img{
+        max-height: 26vh;
+    }
+    .easyGrid div{
+        height: 26vh;
+    }
+
+    .mediumGrid>*{
+        width: 20%;
+    }
+    .mediumGrid img{
+        max-height: 20vh;
+    }
+    .mediumGrid div{
+        height: 20vh;
+    }
+    
+    .veryHardGrid>*{
+        width: 12.5%;
+    }
+    .veryHardGrid img{
+        max-height: 16vh;
+    }
+    .veryHardGrid div{
+        height: 16vh;
+    }
+
+    .notifications>*{
+        width: 80vw;
+        height: 50vh;
+        border-radius: 6vh;
+    }
+
+    .notifications div p{
+        font-size: 4.4vh;
+    }
+
+    #main .title{
+        font-size: 3.8vh;
+    }
+
+    #gameOverNotification.notifications>*{
+        font-size: 1.8vw;
+        height: 62vh;   
+    }
+
+    
+    #gameOverNotification div>button{
+        width: 30vw;
+    }
+    
+    #gameTableInterface #timer, #gameTableInterface #guessVal{
+        font-size: 6vh;   
+    }
+
+
+}
