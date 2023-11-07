@@ -1,3 +1,4 @@
+localStorage.clear();
 //GameParameters
     //The gameDifficultyCardNumber variable is a number declared when the player selects a difficulty. The number denotes the number of cards generated in the memory game.
     let gameDifficultyCardNumber;

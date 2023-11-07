@@ -384,6 +384,15 @@ color: #CEDFD9;
         font-size: 5vh;   
     }
 
+    div button.back{
+        width: 20vh;
+        height: 20vh;
+        border-radius: 100%;
+        padding: 1vw 2vw;
+    }
+    
+
+
 }
 @media (min-width: 1000px){
     .default button, .dark button, .bright button{
