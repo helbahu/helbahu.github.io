@@ -451,5 +451,9 @@ color: #CEDFD9;
         font-size: 6vh;   
     }
 
+    .instructionsDiff, .instructionsDiffWarning{
+        top: 0.8vh;
+    }
+
 
 }
