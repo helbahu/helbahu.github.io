@@ -8,7 +8,7 @@
     //The best time is recorded in the achievements section. 
     let timeRecord = Infinity;
     //timerId will be used to cancel the timer at the end of the game. 
-    let timerId;cle
+    let timerId;
 
     //guessScore is the value of the lowest number of guesses 
     let guessScore = Infinity;
