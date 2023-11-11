@@ -1,4 +1,4 @@
-//GameParameters
+//Game Parameters
     //The gameDifficultyCardNumber variable is a number declared when the player selects a difficulty. The number denotes the number of cards generated in the memory game.
     let gameDifficultyCardNumber;
     //This value will be easy,medium,hard,or veryhard (depending no the difficulty button clicked).
@@ -8,7 +8,7 @@
     //The best time is recorded in the achievements section. 
     let timeRecord = Infinity;
     //timerId will be used to cancel the timer at the end of the game. 
-    let timerId;
+    let timerId;cle
 
     //guessScore is the value of the lowest number of guesses 
     let guessScore = Infinity;
