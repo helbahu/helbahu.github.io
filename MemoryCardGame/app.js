@@ -259,7 +259,6 @@
         }
     }
 
-
     //This guessScore function is used to convert the best guess to a number value (if a best guess score exists). Then the guessScore will be set to that value. 
     function guessScoreX(diffGuess){
         let x = document.querySelector(diffGuess).innerText;
@@ -366,6 +365,96 @@
         return `hsl(${h},${s}%,${l}%)`;
     };
 
+    //This function gives selected buttons a style
+    function selectedBtnStyle(arr){
+        for(let btn of arr){
+            if(btn === event.target){
+                btn.classList.add(`btnSelected`);
+            }else if(btn.classList.contains(`btnSelected`)){
+                btn.classList.remove(`btnSelected`);
+            }
+        }
+    };
+
+    function generateRandomCardArray(arr,cardArr,clrArr){
+                    //This Function Will generate a random array with the length of gameDifficultyCardNumber and 2 cards of a kind.
+                //cardFaceUrls is an array with length of gameDifficultyCardNumber/2 and will have 1 card of a kind. The following
+                //loop will ensure that only 1 card of a kind is added through a random selection process. 
+                let cardFaceUrls = [];
+                let colorArr = [];
+                for(let i = 0;i<(gameDifficultyCardNumber/2);i++){
+                    let randNum = Math.floor(Math.random()*arr.length);
+                    let newCard =arr[randNum];
+                    let randomColor = makeRandomColor();
+                    colorArr.push(randomColor);
+                    cardFaceUrls.push(newCard);
+                    arr.splice(randNum,1);
+                }
+
+                //numArr is an array with the length of gameDifficultyCardNumber and has values corresponding to their respective indicies. 
+                //This will be used to assign each img (card) to the cardArr (below) at an index corresponding to the value of the randomly
+                //selected value of the numArr. This method is chosen to ensure all indecies aof cardArr are assigned a value and that any
+                //index that has already been assigned a value is not chosen again. 
+                let numArr = [];
+                for(let i=0;i<gameDifficultyCardNumber;i++){
+                    numArr.push(i);
+                }
+
+                //cardArr will be an array with length of gameDifficultyCardNumber and it will be asssigned a url for each index. This array will have 2
+                //cards of a kind at random indices.                      
+                //The final result is cardArr which has the right number of cards for the difficulty and also has the right genre and they are randomized.
+                for(let i = 0;i<cardFaceUrls.length;i++){
+                    let n = 0;
+                    while(n<2){
+                        let randNum = Math.floor(Math.random()*numArr.length);
+                        let index = numArr[randNum];
+                        cardArr[index] = cardFaceUrls[i];
+                        clrArr[index] = colorArr[i];
+                        numArr.splice(randNum,1);
+                        n++;
+                    }
+                }
+
+    }
+
+    function appendCards(cardArr,clrArr){
+        let appendTo = document.querySelector(`#cardContainer`);
+        for(let i = 0;i<gameDifficultyCardNumber;i++){
+            let newDiv = document.createElement(`div`);
+            newDiv.setAttribute(`class`,`cardDiv`);
+            let newImg = document.createElement(`img`);
+            newImg.setAttribute(`class`,`card`);
+            newImg.setAttribute(`src`,cardsBack);
+            newImg.setAttribute(`data-url`,cardArr[i]);
+            newImg.setAttribute(`data-color`,clrArr[i]);
+            newDiv.append(newImg);
+            appendTo.append(newDiv);
+        }
+    }
+
+    function flipCard(card){
+        //This will enable the animation for the card flip.
+        card.classList.add(`cardClick`);
+
+        let currentFace = card.getAttribute(`src`);
+        let hiddenFace = card.getAttribute(`data-url`);        
+        //This will change the card when the card is 50% through the animation, when the card is on its side, to simulate the card flipping. 
+        setTimeout(function(){
+            card.setAttribute(`src`,hiddenFace);
+            card.setAttribute(`data-url`,currentFace);    
+        },300)
+        //This will end the flip animation after its elapsed time. 
+        setTimeout(function(){
+            card.classList.remove(`cardClick`);
+        },600)
+    }
+
+
+
+
+    
+
+
 
 
 //-----------------------------------
@@ -379,7 +468,6 @@
         if(localStorage.getItem(`achievements`)){
             let obj = JSON.parse(localStorage.getItem(`achievements`));
             score.innerText = obj[key];
-            console.log(`this is the key: ${key} and this is the value: ${obj[key]}`);
         }else{
             score.innerText = achievementsObj[key];
         }
@@ -410,6 +498,87 @@
         status.innerText = `Gameplay Color: Disabled`;
         colorEnabled = false;
     }
+
+
+
+//Background Animation
+    let bg = document.querySelector("#backgroundAnimation");
+    let picArr = [cardObj.genreMythology.back,cardObj.genreHorror.back,cardObj.genreAnimals.back].concat(cardObj.genreMythology.face,cardObj.genreHorror.face,cardObj.genreAnimals.face);
+
+    function picNum(){return Math.floor(Math.random()*63);};
+    let newBgImg1 = document.createElement(`img`);
+    let newBgImg2 = document.createElement(`img`);
+    let imgArr = [newBgImg1,newBgImg2];
+    for(let n of imgArr){
+        n.setAttribute(`src`,`${picArr[picNum()]}`);
+        bg.append(n);
+    
+    }
+
+    if(window.innerWidth < 750){
+        newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+        newBgImg2.style.transform = `translateY(60vh) translateX(60vw)`;
+
+    }else if(window.innerWidth < 1100){
+        newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+        newBgImg2.style.transform = `translateY(35vh) translateX(65vw)`;
+
+    }else{
+        newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+        newBgImg2.style.transform = `translateY(35vh) translateX(75vw)`;
+
+    }
+
+    let bgAnimId = setInterval(function(){
+
+        if(window.innerWidth < 750){
+            newBgImg1.style.transform = `translateY(5vh) translateX(5vw) rotate3d(0,1,0,90deg)`;
+            newBgImg2.style.transform = `translateY(60vh) translateX(60vw) rotate3d(0,1,0,90deg)`;
+    
+        }else if(window.innerWidth < 1100){
+            newBgImg1.style.transform = `translateY(5vh) translateX(5vw) rotate3d(0,1,0,90deg)`;
+            newBgImg2.style.transform = `translateY(35vh) translateX(65vw) rotate3d(0,1,0,90deg)`;
+    
+        }else{
+            newBgImg1.style.transform = `translateY(5vh) translateX(5vw) rotate3d(0,1,0,90deg)`;
+            newBgImg2.style.transform = `translateY(35vh) translateX(75vw) rotate3d(0,1,0,90deg)`;
+    
+        }
+    
+        setTimeout(function(){
+            for(let n of imgArr){
+                n.setAttribute(`data-url`,picArr[picNum()]);
+    
+                let currentFace = n.getAttribute(`src`);
+                let hiddenFace = n.getAttribute(`data-url`);        
+    
+                n.setAttribute(`src`,hiddenFace);
+                n.setAttribute(`data-url`,currentFace);
+        
+            }
+
+
+            if(window.innerWidth < 750){
+                newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+                newBgImg2.style.transform = `translateY(60vh) translateX(60vw)`;
+        
+            }else if(window.innerWidth < 1100){
+                newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+                newBgImg2.style.transform = `translateY(35vh) translateX(65vw)`;
+        
+            }else{
+                newBgImg1.style.transform = `translateY(5vh) translateX(5vw)`;
+                newBgImg2.style.transform = `translateY(35vh) translateX(75vw)`;
+        
+            }
+        
+
+
+        },4000)
+
+
+    },10000)
+
 
 
 //--------------------------------------
@@ -467,14 +636,7 @@ for(let btn of mainBtns){
             
             //This is where we set the color of the selected difficulty button. It works as a radio input, where only one of the buttons will have the btnSelected style.
             let diffBtns = document.querySelectorAll(`#difficulty button.diffBtn`);
-            for(let btn of diffBtns){
-                if(btn === event.target){
-                    btn.classList.add(`btnSelected`);
-                }else if(btn.classList.contains(`btnSelected`)){
-                    btn.classList.remove(`btnSelected`);
-                }
-            }
-            
+            selectedBtnStyle(diffBtns);            
         }
 
         //This conditional looks for any button with a value equal to any key inside the cardObj. This is where the cards, cardsBack, and cardsFace variables are declared.        
@@ -497,17 +659,16 @@ for(let btn of mainBtns){
 
             //This is where the btnSelected style is set to the selected genre.
             let genreBtns = document.querySelectorAll(`#genre button.genreBtn`);
-            for(let btn of genreBtns){
-                if(btn === event.target){
-                    btn.classList.add(`btnSelected`);
-                }else if(btn.classList.contains(`btnSelected`)){
-                    btn.classList.remove(`btnSelected`);
-                }
-            }
+            selectedBtnStyle(genreBtns);
         }
 
         //This conditional is activated once the startGame button is clicked and a difficulty is selected.
         if((valu === "startGame")&&(gameDifficultyCardNumber !== undefined)){
+            //Turn off Background animation 
+            clearTimeout(bgAnimId);
+            newBgImg1.remove();
+            newBgImg2.remove();
+
             //This conditional checks if a genre was selected (by checking if cards is empty or not). If the player hasn't selected a genre 
                 //this will set the default to genreAll.
             if(cards === undefined){
@@ -518,75 +679,28 @@ for(let btn of mainBtns){
                 cardsFace = cards.face;    
             }
 
-            //newArr is a copy of cardsFace. We use newArr instead of cardsFace because when we select random cards, we want to remove selected cards from the array.
-            let newArr = cardsFace.slice();
-
             //TThe gameSettings variable gets the key value of the gameGridSettings corresponding to the gameDifficultyCardNumber. Then we will add the class to the
                 //gameTable. This will format the gameTable in CSS. 
-            let gameSettings = gameGridSettings[gameDifficultyCardNumber];
-            let gameTable = document.querySelector(`#cardContainer`).classList;
-            gameTable.add(gameSettings);
-            //this loop tests for if the gametable contains unnecessary classes and removes them.
-            for(let key in gameGridSettings){
-                if(parseFloat(key) !== gameDifficultyCardNumber){
-                    gameTable.remove(gameGridSettings[key]);
-                } 
-            }
-
-            //This Function Will generate a random array with the length of gameDifficultyCardNumber and 2 cards of a kind.
-                //cardFaceUrls is an array with length of gameDifficultyCardNumber/2 and will have 1 card of a kind. The following
-                //loop will ensure that only 1 card of a kind is added through a random selection process. 
-                let cardFaceUrls = [];
-                let colorArr = [];
-                for(let i = 0;i<(gameDifficultyCardNumber/2);i++){
-                    let randNum = Math.floor(Math.random()*newArr.length);
-                    let newCard =newArr[randNum];
-                    let randomColor = makeRandomColor();
-                    colorArr.push(randomColor);
-                    cardFaceUrls.push(newCard);
-                    newArr.splice(randNum,1);
+                let gameSettings = gameGridSettings[gameDifficultyCardNumber];
+                let gameTable = document.querySelector(`#cardContainer`).classList;
+                gameTable.add(gameSettings);
+                //this loop tests for if the gametable contains unnecessary classes and removes them.
+                for(let key in gameGridSettings){
+                    if(parseFloat(key) !== gameDifficultyCardNumber){
+                        gameTable.remove(gameGridSettings[key]);
+                    } 
                 }
+    
 
-                //numArr is an array with the length of gameDifficultyCardNumber and has values corresponding to their respective indicies. 
-                //This will be used to assign each img (card) to the cardArr (below) at an index corresponding to the value of the randomly
-                //selected value of the numArr. This method is chosen to ensure all indecies aof cardArr are assigned a value and that any
-                //index that has already been assigned a value is not chosen again. 
-                let numArr = [];
-                for(let i=0;i<gameDifficultyCardNumber;i++){
-                    numArr.push(i);
-                }
+            //newArr is a copy of cardsFace. We use newArr instead of cardsFace because when we select random cards, we want to remove selected cards from the array.
+            let newArr = cardsFace.slice();
+            let cardArr = [];
+            let colorArr2 = [];
+            generateRandomCardArray(newArr, cardArr, colorArr2);
 
-                //cardArr will be an array with length of gameDifficultyCardNumber and it will be asssigned a url for each index. This array will have 2
-                //cards of a kind at random indices.                      
-                //The final result is cardArr which has the right number of cards for the difficulty and also has the right genre and they are randomized.
-                let cardArr = [];
-                let colorArr2 = [];
-                for(let i = 0;i<cardFaceUrls.length;i++){
-                    let n = 0;
-                    while(n<2){
-                        let randNum = Math.floor(Math.random()*numArr.length);
-                        let index = numArr[randNum];
-                        cardArr[index] = cardFaceUrls[i];
-                        colorArr2[index] = colorArr[i];
-                        numArr.splice(randNum,1);
-                        n++;
-                    }
-                }
-                
             //Now that we have a random array we can go to the follwoing loop which will generate a grid that has
             //the right number of cards and we will give each spot (div) an image with the corresponding url in cardArr.
-            let appendTo = document.querySelector(`#cardContainer`);
-            for(let i = 0;i<gameDifficultyCardNumber;i++){
-                let newDiv = document.createElement(`div`);
-                newDiv.setAttribute(`class`,`cardDiv`);
-                let newImg = document.createElement(`img`);
-                newImg.setAttribute(`class`,`card`);
-                newImg.setAttribute(`src`,cardsBack);
-                newImg.setAttribute(`data-url`,cardArr[i]);
-                newImg.setAttribute(`data-color`,colorArr2[i]);
-                newDiv.append(newImg);
-                appendTo.append(newDiv);
-            }
+            appendCards(cardArr,colorArr2);
 
             //memoryCards is a node array with all the generated cards (all images were given a class of card).
             memoryCards = document.querySelectorAll(`.card`);
@@ -594,7 +708,7 @@ for(let btn of mainBtns){
             let counter = 0;
             //This is an array with 2 cards in 
             let faceUpCards = [];
-//-------------!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
             let scoreVal = document.querySelector(`#guessValSpan`);
             let gameTableColor = document.querySelector(`#gameTable`);
             
@@ -631,20 +745,7 @@ for(let btn of mainBtns){
                         }
                         
                         //This will execute if the counter is <2 (as the conditional allows). This will toggle the face with the back when the card is clicked.                    
-                        let currentFace = card.getAttribute(`src`);
-                        let hiddenFace = card.getAttribute(`data-url`);        
-                        //This will enable the animation for the card flip.
-                        card.classList.add(`cardClick`);
-                        //This will change the card when the card is 50% through the animation, when the card is on its side, to simulate the card flipping. 
-                        setTimeout(function(){
-                            card.setAttribute(`src`,hiddenFace);
-                            card.setAttribute(`data-url`,currentFace);    
-                        },300)
-                        //This will end the flip animation after its elapsed time. 
-                        setTimeout(function(){
-                            card.classList.remove(`cardClick`);
-                        },600)
-                            
+                        flipCard(card);                            
                     }
 
                     //This conditonal is where the game's logic works. This will test if the two selected cards are a match or not. 
@@ -674,30 +775,17 @@ for(let btn of mainBtns){
                         }else if(card1 !== card2){
                             //This will enable the animation for the card flip.
                             setTimeout(function(){
-                                faceUpCards[0].classList.add(`cardClick`);
-                                faceUpCards[1].classList.add(`cardClick`);
+                                flipCard(faceUpCards[0]);
+                                flipCard(faceUpCards[1]);
                                 setTimeout(function(){
-                                    for(let c of faceUpCards){
-                                        let currentFace = c.getAttribute(`src`);
-                                        let hiddenFace = c.getAttribute(`data-url`);                    
-                                        c.setAttribute(`src`,hiddenFace);
-                                        c.setAttribute(`data-url`,currentFace);        
-                                    }
-                                },300)
-                                setTimeout(function(){
-                                    for(let c of faceUpCards){
-                                        c.classList.remove(`cardClick`);
-                                    }
+                                    faceUpCards[0].classList.add(`card`);
+                                    faceUpCards[1].classList.add(`card`);    
                                     counter = 0;
-                                    faceUpCards = [];    
-                                },600)
-                                faceUpCards[0].classList.add(`card`);
-                                faceUpCards[1].classList.add(`card`);
-
+                                    faceUpCards = [];        
+                                },600);
                             },1000)
+
                         }
-
-
 
                     }
 

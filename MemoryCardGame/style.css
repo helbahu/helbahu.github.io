@@ -13,6 +13,23 @@ body{
 }
 
 
+#backgroundAnimation{
+    opacity: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#backgroundAnimation img{
+    position: absolute;
+    max-width: 30vw;
+    max-height: 60vh;
+    transition: all 4s linear;
+    
+}
+
+
 body.default{
     background-color: #D52941;
     display: block;
@@ -47,7 +64,7 @@ body.bright{
 .default button, .dark button, .bright button{
     margin-bottom: 10vh;
     width: 80vw;
-    height: 6vh;
+    min-height: 6vh;
     border-radius: 3vh;
     border:#565264 0.2vw solid;
     font-size: 4vh;
