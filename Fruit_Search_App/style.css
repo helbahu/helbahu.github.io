@@ -43,7 +43,7 @@ ul li:hover {
 
 
 /* MEDIA */
-@media (min-width:700px){
+@media (min-width:800px){
   .search-container input,
   .search-container .suggestions {
     /* TODO */
