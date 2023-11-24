@@ -42,15 +42,26 @@ ul li:hover {
 
 
 /* MEDIA */
-@media (min-width:800px){
+@media (max-width:700px){
+  .search-container {
+    margin: 20vh 5vw;
+  }
   .search-container input,
   .search-container .suggestions {
-    /* TODO */
+      font-size: 4vh;
+  }
+
+}
+
+
+
+@media only screen and (min-width: 800px){
+  .search-container input,
+  .search-container .suggestions {
     font-size: 6vh;
   }
   .search-container {
-    /* TODO */
-  margin: 20vh 30vw;
+    margin: 20vh 30vw;
   }
   .search-container .suggestions {
     height: 44.5vh;
