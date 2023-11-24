@@ -37,7 +37,6 @@ ul li {
 }
 ul li:hover {
   transition: all 0.3s;
-  border: white solid 0.2vh;
   
 }
 
