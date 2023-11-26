@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+  <title>Connect 4</title>
+  <link href="connect4.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="game">
+  <form id="form">
+    <table id="inputTable">
+      <tr>
+        <td>
+            <label for="dimensions">Dimensions: </label>
+        </td>
+        <td>
+            <input type="number" id="n1" max="10" min="3" placeholder="Rows" required value="6">
+            <input type="number" id="n2" max="15" min="5" placeholder="Columns" required value="6">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="player1Name">Player 1 Name: </label>
+        </td>
+        <td>
+            <input type="text" id="player1Name" maxlength="25" value="Player1">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="player1Color">Player 1 Color: </label>
+        </td>
+        <td>
+            <input type="color" id="player1Color" value="#FF0000">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="player2Name">Player 2 Name: </label>
+        </td>
+        <td>
+            <input type="text" id="player2Name" maxlength="25" value="Player2">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="player2Color">Player 2 Color: </label>
+        </td>
+        <td>
+            <input type="color" id="player2Color" value="#1221F3">
+        </td>
+      </tr>
+
+    </table>
+    <button type="submit" id="playBtn">Play Game/Restart</button>
+  </form>
+  <table id="board"></table>
+</div>
+
+<script src="connect4.js"></script>
+</body>
+</html>
