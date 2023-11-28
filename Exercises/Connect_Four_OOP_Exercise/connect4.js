@@ -6,22 +6,31 @@
  */
 
 class Player {
-  constructor(color,name){
+  constructor(color,name,image){
     this.color = color;
     this.name = name;
+    this.image = image;
   }
   assignColor(element){
     element.style.backgroundColor = `${this.color}`;
   }
+  assignImage(element){
+    element.style.background = `url(Assets/${this.image}.png)`;
+    element.style.backgroundRepeat = "no-repeat";
+    element.style.backgroundSize = "contain";
+    element.style.backgroundPosition = "center";
+
+  }
+
 }
 
 
 class Game {
-  constructor(width,height,name1,color1,name2,color2){
+  constructor(width,height,name1,color1,image1,name2,color2,image2){
     this.width = width;
     this.height = height;
-    this.player1 = new Player(color1,name1);
-    this.player2 = new Player(color2,name2);
+    this.player1 = new Player(color1,name1,image1);
+    this.player2 = new Player(color2,name2,image2);
     this.currPlayer = this.player1; // active player
     this.board = []; // array of rows, each row is array of cells  (board[y][x])
     this.handleClickBound = this.handleClick.bind(this);
@@ -83,11 +92,16 @@ class Game {
   placeInTable(y, x) {
     const piece = document.createElement('div');
     piece.classList.add('piece');
-    this.currPlayer.assignColor(piece);
     piece.style.top = -50 * (y + 2);
-  
+    if(this.currPlayer.image === ``){
+      this.currPlayer.assignColor(piece);
+    }else{
+      this.currPlayer.assignImage(piece);
+    }
+
     const spot = document.getElementById(`${y}-${x}`);
     spot.append(piece);
+
   }
 
   /** endGame: announce game end */
@@ -185,6 +199,28 @@ class Game {
 
 }
 
+document.getElementById(`form`).addEventListener("click",(e)=>{
+  if(e.target.value === `color`){
+    document.getElementById(`player1Color`).classList.remove(`inactive`);
+    document.getElementById(`player1Image`).classList.add(`inactive`);
+    document.getElementById(`player1Image`).value = ``;
+
+  }else if(e.target.value === `icon`){
+    document.getElementById(`player1Color`).classList.add(`inactive`);
+    document.getElementById(`player1Image`).classList.remove(`inactive`);
+  }
+
+  if(e.target.value === `color2`){
+    document.getElementById(`player2Color`).classList.remove(`inactive`);
+    document.getElementById(`player2Image`).classList.add(`inactive`);
+    document.getElementById(`player2Image`).value = ``;
+
+  }else if(e.target.value === `icon2`){
+    document.getElementById(`player2Color`).classList.add(`inactive`);
+    document.getElementById(`player2Image`).classList.remove(`inactive`);
+  }
+
+});
 
 document.getElementById(`form`).addEventListener("submit",(e)=>{
   e.preventDefault();
@@ -200,11 +236,24 @@ document.getElementById(`form`).addEventListener("submit",(e)=>{
   let player2Name = getVal(`player2Name`);
   let player1Color = getVal(`player1Color`);
   let player2Color = getVal(`player2Color`);
+  let player1Image = getVal(`player1Image`);
+  let player2Image = getVal(`player2Image`);
 
-  let newGame = new Game (columns,rows,player1Name,player1Color,player2Name,player2Color);
+  if((player1Image === player2Image)&&(player1Image !== ``)){
+    return alert(`Player Icons should be different!`);
+  }
+
+
+  let newGame = new Game (columns,rows,player1Name,player1Color,player1Image,player2Name,player2Color,player2Image);
   newGame.startGame();
   form.reset();
   table.add(`inactiveTable`);
+
+  document.getElementById(`player1Color`).classList.remove(`inactive`);
+  document.getElementById(`player1Image`).classList.add(`inactive`);
+  document.getElementById(`player2Color`).classList.remove(`inactive`);
+  document.getElementById(`player2Image`).classList.add(`inactive`);
+
 });
 
 

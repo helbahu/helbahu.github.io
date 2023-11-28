@@ -1,27 +1,12 @@
+//-----------------------------------------------------------------------Global variables
 const input = document.querySelector('#fruit');
 const suggestions = document.querySelector('.suggestions ul');
 
 const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry', 'Boysenberry', 'Currant', 'Cherry', 'Coconut', 'Cranberry', 'Cucumber', 'Custard apple', 'Damson', 'Date', 'Dragonfruit', 'Durian', 'Elderberry', 'Feijoa', 'Fig', 'Gooseberry', 'Grape', 'Raisin', 'Grapefruit', 'Guava', 'Honeyberry', 'Huckleberry', 'Jabuticaba', 'Jackfruit', 'Jambul', 'Juniper berry', 'Kiwifruit', 'Kumquat', 'Lemon', 'Lime', 'Loquat', 'Longan', 'Lychee', 'Mango', 'Mangosteen', 'Marionberry', 'Melon', 'Cantaloupe', 'Honeydew', 'Watermelon', 'Miracle fruit', 'Mulberry', 'Nectarine', 'Nance', 'Olive', 'Orange', 'Clementine', 'Mandarine', 'Tangerine', 'Papaya', 'Passionfruit', 'Peach', 'Pear', 'Persimmon', 'Plantain', 'Plum', 'Pineapple', 'Pomegranate', 'Pomelo', 'Quince', 'Raspberry', 'Salmonberry', 'Rambutan', 'Redcurrant', 'Salak', 'Satsuma', 'Soursop', 'Star fruit', 'Strawberry', 'Tamarillo', 'Tamarind', 'Yuzu'];
 
 
-//Background and highlight Animation function
-const colorHighlight = (a,b,callback) => {
-	let rev;
-	let x = setInterval(()=>{
-		if(a === 17)rev = false;
-		if(a === 117)rev = true;
-		callback(a,b);
-		if(!rev){
-			a +=2;
-			b +=3;	
-		}else{
-			a -=2;
-			b -=3;	
-		}
-	},500);
-}
 
-
+//-----------------------------------------------------------------------Classes and Functions 
 //Dropdown Suggestions class
 class Dropdown {
 	constructor(arr,input,suggestions){
@@ -78,8 +63,6 @@ class Dropdown {
 
 }
 
-const fruitDropDown = new Dropdown(fruit,input,suggestions);
-fruitDropDown.activateDropDown();
 
 
 //Additional Functions
@@ -96,20 +79,12 @@ class HighlightDropdown {
 		for(let key in this.styleObj){
 			li.style[key] = this.styleObj[key];
 		}
-		console.log(this.styleObj.backgroundColor);
-		// li.style.backgroundColor = this.color;
-		// li.style.border = `white solid 0.2vh`;
-		// li.style.color = `white`;
 	}
 	removeHighlight(li){
 		li.classList.remove(`selected`);
 		for(let key in this.styleObj){
 			li.style[key] = ``;
 		}
-
-		// li.style.backgroundColor = ``;
-		// li.style.border = ``;
-		// li.style.color = ``;
 	}
 
 	highlight(first,second){
@@ -138,24 +113,13 @@ class HighlightDropdown {
 
 }
 
-const fruitHighlightStyleObj = {
-	border: `white solid 0.2vh`,
-	color: `white`
-}
-colorHighlight(17,63,function(a,b){
-	fruitHighlightStyleObj.backgroundColor = `hsl(${b}, 100%, 35%)`;
-});
-const highlightFruitDropdown = new HighlightDropdown(suggestions,fruitHighlightStyleObj);
-highlightFruitDropdown.activateHighlights();
-
-
-//Scroll function
+//Scroll class
 class ArrowScroll{
-	constructor(input,scrollSection,suggestions,styleObj){
+	constructor(input,scrollSection,highlightRef,dropdownRef){
 		this.input = input;
 		this.scroll = scrollSection;
-		this.suggestions = suggestions;
-		this.styleObj = styleObj;
+		this.highlight = highlightRef.highlight.bind(highlightRef);
+		this.useSuggestion = dropdownRef.useSuggestion.bind(dropdownRef);
 	}
 
 	scrollFunc(direction,arr,idx){
@@ -176,34 +140,6 @@ class ArrowScroll{
 		}
 	
 	
-	}
-	addHighlight(li){
-		li.classList.add(`selected`);
-		for(let key in this.styleObj){
-			li.style[key] = this.styleObj[key];
-		}
-	}
-	removeHighlight(li){
-		li.classList.remove(`selected`);
-		for(let key in this.styleObj){
-			li.style[key] = ``;
-		}
-	}
-
-	highlight(first,second){
-		if(second === undefined){
-			this.addHighlight(first);
-		}else if(second === `remove`){
-			this.removeHighlight(first);
-		}else{
-			this.removeHighlight(first);
-			this.addHighlight(second);
-		}
-	}
-
-	useSuggestion(){
-		this.input.value = document.querySelector(`.selected`).innerText;
-		this.suggestions.innerHTML = ``;
 	}
 
 	activateScroll(){
@@ -244,8 +180,46 @@ class ArrowScroll{
 
 }
 
+//Background and highlight Animation function
+const colorHighlight = (a,b,callback) => {
+	let rev;
+	let x = setInterval(()=>{
+		if(a === 17)rev = false;
+		if(a === 117)rev = true;
+		callback(a,b);
+		if(!rev){
+			a +=2;
+			b +=3;	
+		}else{
+			a -=2;
+			b -=3;	
+		}
+	},500);
+}
+
+
+//------------------------------------------------------------------Executed Functions-------------------------------------------------------------
+
+//Enable Dropdown Suggestions
+const fruitDropDown = new Dropdown(fruit,input,suggestions);
+fruitDropDown.activateDropDown();
+
+
+//Activate Highlighting functionality
+const fruitHighlightStyleObj = {
+	border: `white solid 0.2vh`,
+	color: `white`
+}
+colorHighlight(17,63,function(a,b){
+	fruitHighlightStyleObj.backgroundColor = `hsl(${b}, 100%, 35%)`;
+});
+const highlightFruitDropdown = new HighlightDropdown(suggestions,fruitHighlightStyleObj);
+highlightFruitDropdown.activateHighlights();
+
+
+//Enable Arrow Scrolling
 let scrollSection = document.querySelector(`.suggestions`);
-const scrollSuggestions = new ArrowScroll(input,scrollSection,suggestions,fruitHighlightStyleObj);
+const scrollSuggestions = new ArrowScroll(input,scrollSection,highlightFruitDropdown,fruitDropDown);
 scrollSuggestions.activateScroll();
 
 

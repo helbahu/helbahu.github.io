@@ -37,6 +37,16 @@
   margin-bottom: 2vh;
 }
 
-.inactiveTable{
+.inactiveTable, .inactive{
   display: none;
+}
+#inputTable tr{
+  display: flex;
+  justify-content: space-between;
+}
+#inputTable tr td{
+  width: 50%;
+}
+#inputTable tr input{
+  width: 100%;
 }

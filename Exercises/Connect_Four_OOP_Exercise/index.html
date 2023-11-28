@@ -27,10 +27,26 @@
       </tr>
       <tr>
         <td>
-            <label for="player1Color">Player 1 Color: </label>
+            <label for="player1Color">Player 1 
+              <select id="selectIconType">
+                <option value="color">Color</option>
+                <option value="icon">Icon</option>
+              </select>: 
+            </label>
         </td>
         <td>
             <input type="color" id="player1Color" value="#FF0000">
+            <select class="inactive" name="player1Image" id="player1Image">
+              <option value="">Select Icon</option>
+              <option value="apple">Apple</option>
+              <option value="basketball">Basketball</option>
+              <option value="star">Star</option>
+              <option value="bird">Bird</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+              <option value="frog">Frog</option>
+            </select>
+
         </td>
       </tr>
       <tr>
@@ -43,14 +59,32 @@
       </tr>
       <tr>
         <td>
-            <label for="player2Color">Player 2 Color: </label>
+            <label for="player2Color">Player 2
+              <select id="selectIconType">
+                <option value="color2">Color</option>
+                <option value="icon2">Icon</option>
+              </select> : 
+            </label>
         </td>
         <td>
             <input type="color" id="player2Color" value="#1221F3">
+            <select class="inactive" name="player2Image" id="player2Image">
+              <option value="">Select Icon</option>
+              <option value="apple">Apple</option>
+              <option value="basketball">Basketball</option>
+              <option value="star">Star</option>
+              <option value="bird">Bird</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+              <option value="frog">Frog</option>
+
+            </select>
+
         </td>
       </tr>
 
     </table>
+
     <button type="submit" id="playBtn">Play Game/Restart</button>
   </form>
   <table id="board"></table>
