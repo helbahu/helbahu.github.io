@@ -123,23 +123,18 @@ class ArrowScroll{
 	}
 
 	scrollFunc(direction,arr,idx){
-		let liHt = (arr[0].clientHeight)*(idx - 4);
-	
-		idx < (this.scroll.scrollTop/(arr[0].clientHeight))?this.scroll.scrollTo(0,(arr[0].clientHeight)*(idx)):null;
-		idx > (this.scroll.scrollTop/(arr[0].clientHeight) + 5)?this.scroll.scrollTo(0,liHt):null;
-	
+		(idx < (this.scroll.scrollTop/(arr[0].clientHeight)))||(idx > (this.scroll.scrollTop/(arr[0].clientHeight) + 6))? arr[idx].scrollIntoView():null;                      
 	
 		if((direction === `down`)&&(idx >=5)){
-			(this.scroll.scrollTop/(arr[0].clientHeight) + 5) === idx ?this.scroll.scrollTo(0,liHt):null;
+			Math.round(this.scroll.scrollTop/(arr[0].clientHeight) + 5) === idx ? arr[idx-4].scrollIntoView():null;
 			(idx === arr.length-1)?this.scroll.scrollTo(0,0):null;
 							
 		}
 		if(direction === `up`){
-			(this.scroll.scrollTop/(arr[0].clientHeight)) === idx ? this.scroll.scrollTo(0,(arr[0].clientHeight)*(idx-1)):null;
+			(Math.round(this.scroll.scrollTop/(arr[0].clientHeight)) === idx)&&(idx !== 0) ? arr[idx-1].scrollIntoView():null; 
 			(idx === 0)? this.scroll.scrollTo(0,(arr[0].clientHeight)*(arr.length - 6)):null;
 		}
-	
-	
+		
 	}
 
 	activateScroll(){
@@ -149,6 +144,7 @@ class ArrowScroll{
 				if((e.key === `ArrowDown`)&&(liList.length > 0)){
 					if(liList.every(li => !li.classList.contains(`selected`))){
 						this.highlight(liList[0]);
+						this.scrollFunc(null,liList,0);
 					}else{
 						let idx = liList.findIndex(li => li.classList.contains(`selected`));
 						(idx < liList.length - 1) ? this.highlight(liList[idx],liList[idx+1]):this.highlight(liList[idx],liList[0]);
@@ -175,10 +171,11 @@ class ArrowScroll{
 			}
 		
 		})
-		
+
 	}
 
 }
+
 
 //Background and highlight Animation function
 const colorHighlight = (a,b,callback) => {
