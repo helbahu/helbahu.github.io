@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <style>
+
+    img {
+      max-width: 70%;
+    }
+
+    .image-center {
+      display: block;
+      margin: 10px auto;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1 id="title" class="text-center">Welcome to my website.</h1>
+  <div class="row">
+    <article class="col-sm-8">
+      <p>My website is very important because I have many important things
+        to say. Here is a picture of a puppy in a cup: </p>
+      <img src="pup-in-cup.jpg" alt="Puppy in Cup">
+      <p>Here are some more thoughts: Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Cum harum labore veritatis, possimus
+        facilis quas repellat, explicabo, ad commodi ipsum quidem nostrum
+        earum pariatur fugit! Magni sunt nulla impedit! Facilis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, natus
+        qui nostrum libero atque hic distinctio sint facilis nihil possimus
+        tenetur deserunt rerum laboriosam cum quisuam doloremque ducimus
+        error.</p>
+      <p>Rerum debitis aspernatur, ipsum animi! Quis ullam dolore blanditiis
+        accusantium eius minus tempore, iure maxime similique vel! Possimus
+        reprehenderit autem, recusandae quos laudantium nesciunt libero suscipit
+        officia rerum, et.</p>
+      <p>Aliquam harum at soluta id esse perspiciatis, nesciunt corporis nostrum
+        commodi, dolorum, repellat possimus a cumque. Id sed explicabo, quaerat
+        sit esse facere, voluptatem, odit nesciunt eveniet assumenda, error!</p>
+      <p>Consequuntur porro, nobis placeat, labore magni aliquam repellendus
+        consequatur hic facere, molestiae dolorum suscipit quos sint, minima
+        Quibusdam voluptatem est hic, corporis. Officiis delectus, consectetur
+        harum reiciendis perferendis.</p>
+    </article>
+    <aside class="col-sm-4">
+      <h4>I love lists. Here's why.</h4>
+      <ol>
+        <li>Sometimes they're numbered, and numbers are great.</li>
+        <li>Sometimes they're not, and that's okay too.</li>
+        <li>I don't have the attention span to read paragraphs.</li>
+        <li>Hey look, there's a puppy!</li>
+      </ol>
+    </aside>
+  </div>
+  <div class="row mb-5">
+    <div class="col-sm-4">
+      Red
+      <input class="form-control" type="number" min="0" max="255" value="255">
+    </div>
+    <div class="col-sm-4">
+      Blue
+      <input class="form-control" type="number" min="0" max="255" value="255">
+    </div>
+    <div class="col-sm-4">
+      Green
+      <input class="form-control" type="number" min="0" max="255" value="255">
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  $(document).ready(function(){
+    console.log("Let\’s get ready to party with jQuery!");
+  });
+  $(`article img`).addClass(`image-center`);
+  $(`article p`).last().remove();
+
+  const fontRandom = (() => Math.floor(Math.random()*101));
+  let styleObj = {
+    "font-size": `${fontRandom()}px`,
+    "color": `navy`
+  }
+  $(`#title`).css(styleObj);
+  $(`ol`).append(`<li>Chickens run surprisingly fast!</li>`);
+  let apologyP = `I sincerely apologize for the recent list of meaningless points that I shared with you. In hindsight, I recognize that the content lacked substance and may have been a disappointment. I value your time, and I regret any moment you spent reading through what turned out to be a frivolous composition. It was not my intention to waste even a minute of your life, and for that, I am truly sorry. I appreciate your understanding and assure you that I am committed to providing more meaningful and engaging content in the future. Thank you for your patience and acceptance of my apology.`;
+  $(`aside`).empty().append(apologyP);
+  const inputContainer = $(`.container`).children().last();
+  const bgColorFunc = () =>{
+    [r,b,g] = [...inputContainer.find(`input`)];
+    [r,b,g] = [r.value,b.value,g.value];
+    $(`body`).css(`background-color`,`rgb(${r},${g},${b})`);
+  };
+  inputContainer.on(`click`,`input`,bgColorFunc);
+  inputContainer.on(`keyup`,`input`,bgColorFunc);
+
+  $(`img`).on(`click`,function(){
+    $(this).remove();
+  })
+
+
+</script>
+</body>
+
+</html>
