@@ -1,0 +1,50 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(44, 44, 44);
+}
+
+.container-fluid :first-child{
+    background-color: rgb(167, 126, 126);
+    color: white;
+    font-size: 6vh;
+    align-items: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+#btncontain{
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+#addBtn{
+    margin: 1vh;
+    width: 11vh;
+    height: 11vh;
+    padding: 0vh;
+    font-size: 8vh;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+#form-container{
+    font-size: 3vh;
+    z-index: 1;
+    font-weight: bold;
+    position: absolute;
+}
+#form-container button{
+    font-size: 3vh;
+}
+#movieList li{
+    list-style: none;;
+    font-size: 3vh;
+}
+.inactive{
+    display: none;
+}

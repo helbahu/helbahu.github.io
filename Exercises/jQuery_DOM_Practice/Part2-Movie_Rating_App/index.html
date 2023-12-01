@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <h1 class="col-6 title">My Movie Ratings</h1>
+        <div class="col-3" id="btncontain">
+            <button type="button" class="btn btn-dark" id="addBtn">+</button>
+        </div>
+    </div>
+
+</div>
+<div id="form-container" class="col-12 inactive">
+    <form class="container alert alert-secondary col-6 mt-4">
+        <div class="row col-10 mx-auto mb-4 mt-2">
+            <div class="col-6">
+                <label for="movieTitle">Movie Title: </label>
+            </div>
+            <div class="col-6">
+                <input type="text" minlength="2" id="movieTitle" required>
+            </div>
+        </div>
+        <div class="row col-10 mx-auto mb-4">
+            <div class="col-6">
+                <label for="movieRating">Movie Rating: </label>
+            </div>
+            <div class="col-6">
+                <input type="number" min="0" max="10" id="movieRating">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-10 mx-auto">
+                <textarea id="addComments" cols="57" rows="4" placeholder="Comments (optional)"></textarea>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <button type="submit" class="btn btn-success col-6 mx-auto">Add Movie</button>
+        </div>
+
+        
+    </form>
+</div>
+<div id="movieList">
+    <ul>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>
