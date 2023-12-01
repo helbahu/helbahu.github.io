@@ -77,4 +77,56 @@ $(`#movieList`).on(`mousedown`,`li .showDetails`,function(e){
     $(this).closest(`.row`).next().toggleClass(`collapse`).toggleClass(`collapse.show`);
 })
 
+$(`#sort`).on(`click`,function(e){
+    let valu = e.target.value;
+    console.log(`SORT THAT SHIZ`,valu);
+    $(`#movieList ul`).empty();
+    let arr = Object.values(movieObj);
+    let arrIdx = Object.keys(movieObj);
 
+    const appendArr = (arr) =>{
+        for(let movie of arr){
+            const newMovie = new AddMovie(movie[0],movie[1],movie[2],arrIdx[arr.indexOf(movie)]);
+            newMovie.createLi();
+        }    
+    }
+
+    
+    if(valu === `default`){
+        appendArr(arr);
+    }
+
+    if(valu === `sort-AlphabeticalAtoZ`){
+        let sorted = arr.sort((a,b) =>{
+            let z;
+            (a[0][0].toLowerCase()<b[0][0].toLowerCase())? z=-1:z=1;
+            return z;
+        })
+        appendArr(sorted);
+    }
+
+    if(valu === `sort-AlphabeticalZtoA`){
+        let sorted = arr.sort((a,b) =>{
+            let z;
+            (a[0][0].toLowerCase()<b[0][0].toLowerCase())? z=1:z=-1;
+            return z;
+        })
+        appendArr(sorted);
+    }
+
+    if(valu === `sort-Rating10to0`){
+        let sorted = arr.sort((a,b) =>{
+            return b[1]-a[1];
+        })
+        appendArr(sorted);
+    }
+
+    if(valu === `sort-Rating0to10`){
+        let sorted = arr.sort((a,b) =>{
+            return a[1]-b[1];
+        })
+        appendArr(sorted);
+    }
+
+
+})
