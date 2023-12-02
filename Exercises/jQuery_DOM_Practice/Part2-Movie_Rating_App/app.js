@@ -79,7 +79,6 @@ $(`#movieList`).on(`mousedown`,`li .showDetails`,function(e){
 
 $(`#sort`).on(`click`,function(e){
     let valu = e.target.value;
-    console.log(`SORT THAT SHIZ`,valu);
     $(`#movieList ul`).empty();
     let arr = Object.values(movieObj);
     let arrIdx = Object.keys(movieObj);
