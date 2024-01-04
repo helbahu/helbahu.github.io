@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLibs Game</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+    <h1>MadLibs</h1>
+
+    {% block content %}
+    <form action="/madlib-story">
+        <label for="stories">Choose Story:</label>
+
+        <select name="stories" id="stories">
+            <option value="random">Random</option>
+            {% for story in stories %}
+            <option value="{{story}}">{{story}}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Play</button>
+    </form>
+    {% endblock %}
+
+</body>
+</html> 

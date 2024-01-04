@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <form action="/story">
+        <table>
+            {% for prompt in story_prompts %}
+                <tr>
+                    <td>
+                        <label>{{prompt}} : </label>
+                    </td>
+                    <td>
+                        <input name="{{prompt}}" type="text" required max="30">
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="buttoncontainer">
+            <button type="submit">Generate!</button>    
+        </div>
+    
+    </form>
+    
+{% endblock %}
