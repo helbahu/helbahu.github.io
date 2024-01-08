@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Wizard</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <img class="logo" src="/static/wiz_logo.png" alt="logo">
+        </div>
+        <div>
+            <h1 class="title">Survey Wizard</h1>
+        </div>
+        <div class="rightnav">
+            <div class="flashmessage">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for c,msg in messages %}
+                    <p class="{{c}}">{{msg}}</p>                    
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+        </div>
+    </nav>
+    <div class="form_container">
+        {% block surveys %}
+            <form class="select_survey_form" action="/survey" >
+                <h2 class="font2">Select a survey:</h2>
+
+                {% for (key,survey) in surveys %}
+                <button type="button" name="selected_survey" value="{{key}}" data-btngroup="select_survey">{{survey.title}}</button>
+                {% endfor %}
+                <button type="submit" id="startsurvey" name="start_survey" value="">Select Survey</button>
+            </form>
+        {% endblock %}
+
+    </div>
+
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/popper"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/main.js"></script>
+</body>
+</html>
