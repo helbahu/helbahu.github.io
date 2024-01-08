@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block surveys %}
+    <form class="select_survey_form" action="{{link}}">
+        <h2>{{survey.title}}</h2>
+        <p>{{survey.instructions}}</p>
+        <p>{{q.question}}</p>
+        <ul>
+            {% for choice in q.choices %}
+            <li>
+                    <input type="radio" name="choice" id="{{choice}}" value="{{choice}}" required>{{choice}} 
+            </li>
+            {% endfor %}    
+        </ul>
+        {% if q.allow_text %}
+        <label for="`comment">Add Comment
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        </label>
+        {% endif %}
+
+        {% if q_num != last_q %}
+        <button type="submit" name="q_num" value="{{q_num}}">Next question</button>
+         {% else %}
+         <button type="submit" name="q_num" value="complete">Submit Survey</button>
+         {% endif %}
+
+    </form> 
+{% endblock %}

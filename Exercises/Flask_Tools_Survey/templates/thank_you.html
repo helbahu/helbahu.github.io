@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+
+{% block surveys %}
+    <form class="select_survey_form" action="/">
+        <h2>Thank you for completing the {{survey.title}}.</h2>
+        <button type="submit">Go to Homepage</button>
+    </form> 
+{% endblock %}
