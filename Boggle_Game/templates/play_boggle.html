@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="game_nav col-8">
+        <h2 class="score col-4">Score: {{score}}</h2>
+        <h2 id="timer" class="col-4" data-time='{{elapsed_time}}'>Time Left: </h2>
+        <form action="/page_redirect" class="page_change_form col-4">
+            <button class="btn btn-info btn-lg" type="submit" id="restart" name='pageSelect' value="play">Restart</button>
+            <button class="btn btn-info btn-lg" type="submit" id="home" name='pageSelect' value="">Main Menu</button>
+        </form>    
+    </div>
+    <div class="board">
+        {% for y in range(5) %}
+        <div class="board_row">
+            {% for x in range(5) %}
+            <div class="board_box" id="{{y}}-{{x}}">{{board[y][x]}}</div>
+            {% endfor %}    
+        </div>
+        {% endfor %}    
+    </div>
+    <div class="submit_word_form">
+        <button class="btn btn-success btn-lg" id="submit_word">Submit Word</button>
+    </div>
+    <form action="/page_redirect" class="game_over col-11 col-md-8 alert alert-info d-none">
+        <p class="final_score h2">Your final score is: {{score}}.</p>
+        <p class="final_longest_word h2">The longest word you got was: {{longestWord}}.</p>
+
+        <button class="btn btn-success btn-lg" type="submit" id="submit_word" name="pageSelect" value="save_and_restart">Restart</button>
+        <button class="btn btn-success btn-lg" type="submit" id="submit_word" name="pageSelect" value="save_and_home">Main Menu</button>
+    </form>
+
+{% endblock %}

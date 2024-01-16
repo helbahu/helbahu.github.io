@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="title">How to Play</h2> 
+<p class="h2">Players have three minutes to find as many words as possible by connecting adjacent 
+    letters horizontally, vertically, or diagonally. Points are scored based on word length, with longer 
+    words earning more points. After the time is up, your score will be calculated based on the number 
+    of unique words submitted. 
+</p>
+<form class="col-12 col-md-6 mx-auto" action="/page_redirect">
+    <button class="col-8 btn btn-info btn-lg" type="submit" name="pageSelect" value="">Back</button>
+</form>
+{% endblock %}

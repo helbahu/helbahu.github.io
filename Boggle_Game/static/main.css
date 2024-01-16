@@ -1,0 +1,101 @@
+body{
+    background-color: rgb(64, 68, 122);
+}
+form{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container1{
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 4rem;
+}
+.achievements_table{
+    margin-top: 5vh;
+}
+.achievements_table div{
+    margin: 2vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.board {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 3rem;
+}
+.board_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.board_box {
+    box-sizing: border-box;
+    margin: 1vh;
+    background-color: green;
+    border: solid black 0.2vh;
+    border-radius: 2vh;
+    text-align: center;
+    width: 12vh;
+    height: 12vh;
+}
+.board_box.selected {
+    background-color: rgb(0, 206, 0);
+}
+.board_box:hover {
+    border-color: rgb(255, 255, 189);
+    border-width: 0.3vh;
+    background-color: rgb(0, 206, 0);
+
+}
+
+
+.flash_messages {
+    box-sizing: border-box;
+    position: absolute;
+    right: 0vh;
+    top: 0vh;
+    text-align: center;
+}
+.warning {
+    background-color: rgba(255, 65, 65, 0.8);
+    padding: 2vh;
+    margin: 1vh;
+}
+.success {
+    background-color: rgba(49, 255, 49, 0.673);
+    padding: 2vh;
+    margin: 1vh;
+}
+
+.submit_word_form, .page_change_form {
+    height: auto;
+    margin: 1vh;
+}
+.page_change_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.game_nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.game_over {
+    position: absolute;
+    top: 30vh;
+    z-index: 1;
+    padding: 2vh;
+}

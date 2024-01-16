@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="title">Achievements</h2>
+<div class="col-6 achievements_table">
+    <div>
+        <div class="h2">Games Played</div>
+        <div class="h2">{{game_count}}</div>
+    </div>
+    <div>
+        <div class="h2">High Score</div>
+        <div class="h2">{{high_score}}</div>
+    </div>
+    <div>
+        <div class="h2">Longest Word</div>
+        <div class="h2">{{longest_word}}</div>
+    </div>
+</div>
+
+<form class="col-12 col-md-6 mx-auto" action="/page_redirect">
+    <button class="col-8 btn btn-info btn-lg" type="submit" name="pageSelect" value="">Back</button>
+</form>
+{% endblock %}
