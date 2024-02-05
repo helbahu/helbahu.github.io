@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <h2>Edit User</h2>
+    <form action="/users">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+</div>
+
+<form action="/users/{{user.id}}/edit" method="post" class="userForm">
+    <div class="userForm_table">
+        <div class="userForm_row">
+            <div>
+                <label for="firstName">First Name</label>
+            </div>
+            <div>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required value="{{user.first_name}}">
+            </div>
+        </div>
+        <div class="userForm_row">
+            <div>
+                <label for="lastName">Last Name</label>
+            </div>
+            <div>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required value="{{user.last_name}}">
+            </div>
+        </div>
+        <div class="userForm_row">
+            <div>
+                <label for="profileImage">Image URL</label>
+            </div>
+            <div>
+                <input type="url" name="profileImage" id="profileImage" placeholder="Profile Image URL" value="{{userURL}}">
+            </div>
+        </div>
+
+    </div>
+    <div class="nav2">
+        <button type="submit" class="submit_button">Save Changes</button>
+        <button type="submit" class="submit_button" name="cancelEdit" value="True">Cancel</button>
+    </div>
+
+</form>
+
+
+
+{% endblock %}

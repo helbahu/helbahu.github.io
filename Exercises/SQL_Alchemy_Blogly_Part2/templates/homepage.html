@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="postbox">
+    {% for p in posts %}
+    <h2>{{p.title}}</h2>
+    <p>{{p.content}}</p>
+    <h3>By {{p.user.full_name}} on {{p.datetime_created}}</h3>    
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
