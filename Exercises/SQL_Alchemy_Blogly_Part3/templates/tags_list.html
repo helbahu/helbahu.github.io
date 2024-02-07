@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <h2>Tags</h2>
+    <div class="nav2">
+        <form action="/">
+            <button class="submit_button2" type="submit">Home</button>
+        </form>    
+        <form action="/tags/new">
+            <button class="submit_button" type="submit">Add New Tag</button>
+        </form>
+    </div>
+</div>
+
+<ul class="user_list">
+    {% for t in tags %}
+    <li><a href="/tags/{{t.id}}"> {{t.tag_name}} </a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

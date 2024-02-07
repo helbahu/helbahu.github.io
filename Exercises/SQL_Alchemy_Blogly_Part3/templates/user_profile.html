@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <form action="/users">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+    <div class="nav2">
+        <form action="/users/{{user.id}}/edit">
+            <button class="submit_button2" type="submit">Edit Profile</button>
+        </form>
+        <form action="/users/{{user.id}}/delete" method="post">
+            <button class="del_button" type="submit" name="deleteProfile" value="True">Delete Profile</button>
+        </form>        
+    </div>
+</div>
+<div class="profile_image" style="background-image: url({{user.image_url}});"></div>
+<h2>{{user.full_name}}</h2>
+
+<h3 class="posttitle">Posts</h3>
+{% if posts %}
+<ul  class="user_list">
+    {% for p in posts %}
+    <li><a href="/posts/{{p.id}}">{{p.title}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="user_list" style="text-align: center;">- - 0 posts - -</p>
+{% endif %}
+<form action="/users/{{user.id}}/posts/new">
+    <button class="submit_button2" type="submit">Add Post</button>
+</form>
+
+
+
+{% endblock %}

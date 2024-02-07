@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    {% block form_title %}
+    <h2>Add New Post</h2>
+    {% endblock %}
+    <form action="/users">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+
+</div>
+<form {% block link %} action="/users/{{id}}/posts/new" {% endblock %} method="post" class="userForm">
+    <div class="userForm_table">
+        <div class="userForm_row">
+            <div>
+                <label for="title">Post Title</label>
+            </div>
+            <div>
+                <input type="text" name="title" id="title" placeholder="Title" {% block val %}{% endblock %} required>
+            </div>
+        </div>
+        <div class="userForm_row">
+            <textarea name="content" id="content" cols="60" rows="5" required placeholder="Enter post text">{% block txt_content %}{% endblock %}</textarea>
+        </div>
+        <div class="tagscontainer">
+            <h2>Add Tags</h2>
+            <div class="tagsbox">
+                {% block tag_checkbox %}
+                {% for tag in tags %}
+                <div>
+                    <input type="checkbox" name="tags[]" id="{{tag.id}}" value="{{tag.id}}">
+                    <p data-input="{{tag.id}}">{{tag.tag_name}}</p>
+                </div>
+                {% endfor %}
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+    {% block submit_buttons %}
+    <button type="submit" class="submit_button">Add New User</button>
+    {% endblock %}
+
+</form>
+
+{% endblock %}

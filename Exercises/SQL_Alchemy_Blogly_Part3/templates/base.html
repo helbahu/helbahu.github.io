@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogly</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+    <h1>Blogly</h1>
+    {% block content %}    
+    <div class="nav1">
+        <h2>Users</h2>
+        <div class="nav2">
+            <form action="/">
+                <button class="submit_button2" type="submit">Home</button>
+            </form>        
+            <form action="/users/new">
+                <button class="submit_button" type="submit">Add New User</button>
+            </form>
+        </div>
+    </div>
+    <ul class="user_list">
+        {% for u in users %}
+        <li><a href="/users/{{u.id}}"> {{u.full_name}} </a></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <div class="flash_messages">
+        {% if messages %}
+            {% for c,msg in messages %}
+            <p class="{{c}}">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% endwith %}
+
+    <script src="/static/main.js"></script>
+</body>
+</html>

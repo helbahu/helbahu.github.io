@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <form action="/tags">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+    <div class="nav2">
+        <form action="/tags/{{tag.id}}/edit">
+            <button class="submit_button2" type="submit">Edit Tag</button>
+        </form>
+        <form action="/tags/{{tag.id}}/delete" method="post">
+            <button class="del_button" type="submit" name="deleteProfile" value="True">Delete Tag</button>
+        </form>        
+    </div>
+</div>
+<h2 class="tagtitle">{{tag.tag_name}}</h2>
+
+<h3 class="posttitle">Posts</h3>
+{% if posts %}
+<ul  class="user_list">
+    {% for p in posts %}
+    <li><a href="/posts/{{p.id}}">{{p.title}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="user_list" style="text-align: center;">- - 0 posts - -</p>
+{% endif %}
+
+
+{% endblock %}

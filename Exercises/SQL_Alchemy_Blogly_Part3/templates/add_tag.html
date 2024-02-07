@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    {% block form_title %}
+    <h2>Add New Tag</h2>
+    {% endblock %}
+    <form action="/tags">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+
+</div>
+
+<form {% block link %} action="/tags/new" {% endblock %} method="post" class="userForm">
+
+    <div class="userForm_table">
+        <div class="userForm_row">
+            <div>
+                <label for="tagName">Tag Name</label>
+            </div>
+            <div>
+                <input type="text" name="tagName" id="tagName" placeholder="Enter a tag name" required {% block val %}{% endblock %}>
+            </div>
+        </div>
+        <div class="tagscontainer">
+            <h2>Link Tag to Posts</h2>
+            <div class="tagsbox">
+                {% block post_checkbox %}
+                {% for post in posts %}
+                <div>
+                    <input type="checkbox" name="posts[]" id="{{post.id}}" value="{{post.id}}">
+                    <p data-input="{{post.id}}">{{post.title}}</p>
+                </div>
+                {% endfor %}
+                {% endblock %}
+
+            </div>
+        </div>
+
+    </div>
+    {% block submit_buttons %}
+    <button type="submit" class="submit_button">Add Tag</button>
+    {% endblock %}
+
+</form>
+
+{% endblock %}

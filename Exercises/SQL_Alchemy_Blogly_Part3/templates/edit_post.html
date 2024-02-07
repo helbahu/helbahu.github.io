@@ -1,0 +1,40 @@
+{% extends 'add_post.html' %}
+
+{% block form_title %}
+    <h2>Edit Post</h2>
+{% endblock %}
+
+{% block link %} 
+    action="/posts/{{post.id}}/edit"
+{% endblock %}
+
+{% block val %}
+    value="{{post.title}}"
+{% endblock %}
+
+{% block txt_content %}
+    {{post.content}}
+{% endblock %}
+
+{% block tag_checkbox %}
+    {% for tag in tags %}
+    <div>
+        {% if tag in post_tags %}
+        <input type="checkbox" name="tags[]" id="{{tag.id}}" value="{{tag.id}}" checked>
+        <p class="clickedTag" data-input="{{tag.id}}">{{tag.tag_name}}</p>
+        {% else %}
+        <input type="checkbox" name="tags[]" id="{{tag.id}}" value="{{tag.id}}">
+        <p data-input="{{tag.id}}">{{tag.tag_name}}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block submit_buttons %}
+    <div class="nav2">
+        <button type="submit" class="submit_button">Save Changes</button>
+        <button type="submit" class="submit_button" name="cancelEdit" value="{{post.user_id}}">Cancel</button>
+    </div>
+{% endblock %}
+
+

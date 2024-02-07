@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <form action="/users/{{post.user_id}}">
+        <button class="submit_button2" type="submit">Back</button>
+    </form>
+    <div class="nav2">
+        <form action="/posts/{{post.id}}/edit">
+            <button class="submit_button2" type="submit">Edit Post</button>
+        </form>
+        <form action="/posts/{{post.id}}/delete" method="post">
+            <button class="del_button" type="submit" name="deletePost" value="{{post.user_id}}">Delete Post</button>
+        </form>        
+    </div>
+</div>
+
+<div class="postbox">
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p>
+    <h3>By {{post.user.full_name}}</h3>    
+    <div>
+        <h3 class="tagstitle2">Tags</h3>
+        <div class="tagsbox">
+            {% if tags %}
+                {% for tag in tags %}
+                <div>
+                    <a href="/tags/{{tag.id}}">{{tag.tag_name}}</a>
+                </div>
+                {% endfor %}
+            {% else %}
+            <h3>- - no tags - -</h3>
+            {% endif %}
+                    
+        </div>
+    </div>
+</div>
+
+{% endblock %}

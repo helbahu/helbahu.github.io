@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav1">
+    <form action="/users">
+        <button class="submit_button2" type="submit">Users</button>
+    </form>
+    <form action="/tags">
+        <button class="submit_button2" type="submit">Tags</button>
+    </form>
+</div>
+
+
+<div class="postbox">
+    {% for p in posts %}
+    <h2>{{p.title}}</h2>
+    <p>{{p.content}}</p>
+    <h3>By {{p.user.full_name}} on {{p.datetime_created}}</h3>    
+    {% if p.tags %}
+    <h3 class="tagstitle2">Tags</h3>
+    <div class="tagsbox">
+        {% for tag in p.tags %}
+        <div>
+            <a href="/tags/{{tag.id}}">{{tag.tag_name}}</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
