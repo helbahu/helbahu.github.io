@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<form action="/">
+    <button type="submit" class="btn btn-dark">Back</button>
+</form>
+{% endblock %}
+
+{% block content %}
+    <div class="row bg-light">
+        <div class="col-11 col-md-6 col-lg-4 p-5 mx-auto">
+            <img class="col-12" src="{{pet.photo_url}}" alt="Pet image">
+        </div>
+        <div class="col-10 col-md-6 col-lg-4 display-4 d-flex flex-column justify-content-around mx-auto">
+            <p>Name: {{pet.name}}</p>
+            <p>Species: {{pet.species}}</p>
+            {% if pet.age %}
+            <p>Age: {{pet.age}}</p>
+            {% else %}
+            <p>Age: - </p>
+            {% endif %}
+            {% if pet.notes %}
+            <p class="h4">Notes: {{pet.notes}}</p>
+            {% endif %}
+        </div>    
+        <div class="col-11 col-md-6 col-lg-4 h3 mx-auto">
+
+            <form method="post" class="col-11 mx-auto mt-5" enctype="multipart/form-data">
+                {{form.hidden_tag()}}
+            
+                {% for field in form 
+                    if field.widget.input_type != 'hidden' %}
+                    <p class="form-group">
+                        {{field.label}}
+                        {{field (class_='form-control')}}
+                        <small class="form-text text-muted">
+                            {% for err in field.errors %}
+                            {{err}}
+                            {% endfor%}
+                        </small>
+                    </p>
+            
+                {% endfor %}
+                    <div class="col-8 mx-auto p-4">
+                        <button class="btn btn-success btn-lg col-12">Edit Pet Information</button>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+
+
+        
+{% endblock %}

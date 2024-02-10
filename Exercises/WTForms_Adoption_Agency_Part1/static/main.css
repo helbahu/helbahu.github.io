@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(16, 16, 59);
+}
+
+
+
+.logo_img{
+    width: 200px;
+}
+
+.panel{
+    background-color: rgb(184, 184, 255);
+}
+
+.img_format {
+    object-fit: cover;
+    width: 16rem;
+    height: 16rem;
+}
