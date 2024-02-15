@@ -1,0 +1,20 @@
+li{
+    list-style: none;
+}
+.li_row{
+    display: flex;
+    align-items: center;
+    margin: 2vh;
+}
+.li_row>.div1{
+    width: 15vh;
+    height: 15vh;
+    border-radius: 1vh;
+    background-size: cover;
+}
+.li_row>.div2{
+    margin-left: 3vh;
+    font-size: 2rem;   
+}
+
+
