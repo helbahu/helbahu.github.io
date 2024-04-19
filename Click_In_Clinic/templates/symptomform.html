@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block nav_btns %}
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a {% block cancel_path %} href="/users/{{user.username}}" {% endblock %} class="nav-link btn btn-danger text-light">Cancel</a>            
+        </li>
+        </ul>
+</div>
+{% endblock %}            
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Assessment</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<form id="symptomform" method="post" class="col-11 col-md-8 col-lg-6 mx-auto mt-5" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+
+    {% for field in form
+        if field.widget.input_type != 'hidden' %}
+        {% if field.name != 'patient_name' or user.title%}
+            <p class="form-group {{field.name}}-parent">
+        {% else %}
+            <p class="d-none {{field.name}}-parent">
+        {% endif %}
+                {{field.label}}
+                    {% if (user.title and field.name == 'patient_name') or (field.name == 'doctor_name') %}
+                        <div class="row">
+                            {{field (class_='form-control col-9')}}
+
+                            {% block field_conditions %}
+                                <button type="button" class="col-3 btn btn-sm btn-primary add_patient">Add Patient</button>
+                            {% endblock %}
+                        </div>
+                    {% else %}
+                        {{field (class_='form-control')}}
+                    {% endif %}
+    
+                    <small class="form-text text-muted">
+                {% for err in field.errors %}
+                {{err}}
+                {% endfor%}
+                </small>
+            </p>
+            
+    {% endfor %}
+        {% block btn %}
+        <div class="col-8 mx-auto p-4">
+            <button class="btn btn-success btn-lg col-12">{% block btn_text %} Next {% endblock %}</button>
+        </div>
+        {% endblock %}
+</form>
+{% block otherbtn %}
+{% endblock %}
+
+{% endblock %}

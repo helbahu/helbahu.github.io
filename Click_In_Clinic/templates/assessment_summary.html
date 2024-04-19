@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block nav_btns %}
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+        <form action="/assessment/save" method="post" class="mr-lg-5">
+            <button  class="col-12 btn btn-success text-light mr-5">Complete Assessment</button>
+        </form>                
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link btn btn-danger text-light" href="/users/{{g.user.username}}">Cancel</a>    
+    </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block title %}
+<div class="col-12 mb-5">
+    <h2 class="mb-4">Assessment - Summary</h2>
+    {% block statement %}
+    <h5><center>Please review the completed assessment before submitting.</center></h5>
+    {% endblock %}
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="patientInfo" class="alert {{card_theme}}">
+    <h4>Patient Information</h4>
+    <div class="row justify-content-between">
+        <div class="col-6">
+            <p>Name: {{patient.fullname}} ({{patient.username}})</p>
+            <p>Birthdate: {{patient.birth_date}}</p>        
+        </div>
+        <div class="col-6">
+            <p>Phone Number: {{patient.phone_number}}</p>
+            <p>Email: {{patient.email}}</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div id="doctorInfo" class="alert {{card_theme}}">
+    <h4>Doctor Information</h4>
+    <div class="row justify-content-between">
+        <div class="col-6">
+            <p>Name: {{doctor.fullname}}</p>
+            <p>License: {{doctor.license}}</p>        
+            {% if g.user.title %}
+            <p>Phone Number: {{doctor.phone_number}}</p>
+            <p>Email: {{doctor.email}}</p>        
+            {% endif %}
+        </div>
+        <div class="col-6">
+            <p>Location Name: {{doctor.institution.name}}</p>
+            <p>Location Address: {{doctor.institution.address}}</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div id="completedByUser" class="alert {{card_theme}}">
+    <h4>Assessment Completed By</h4>
+    {% if user_completed_by.title %}
+    <p>Name: {{user_completed_by.fullname}} ({{user_completed_by.title}})</p>
+    {% if g.user.title %}
+    <div class="row justify-content-between">
+        <div class="col-6">
+            <p>Phone Number: {{user_completed_by.phone_number}}</p>
+            <p>Email: {{user_completed_by.email}}</p>                
+        </div>
+        <div class="col-6">
+            <p>Location Name: {{doctor.institution.name}}</p>
+            <p>Location Address: {{doctor.institution.address}}</p>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% else %}
+    <p>Name: Self assessment completed by patient.</p>
+    {% endif %}
+</div>
+
+<hr>
+
+{% if assessment.get('notes') %}
+<div id="doctorInfo" class="alert {{card_theme}}">
+    <h4>Review Summary</h4>
+    <!-- NOTE CHANGE THIS BECAUSE SOMETIMES THE MAIN DOCTOR WASNT THE ONE WHO REVIEWED IT -->
+    <p>Reviewed by: {{doctor.fullname}}    |    License: {{doctor.license}}</p>
+    <p>Doctor's Notes: {{assessment.get('notes')}}</p>        
+    {% if assessment.get('official_diagnosis') %}
+    <p>Official Diagnosis: {{assessment.get('official_diagnosis')[0] if g.user.title else assessment.get('official_diagnosis')[1]}}</p>
+    {% else %}
+    <p>Official Diagnosis: None</p>
+    {% endif %}
+
+    {% if assessment.get('follow_up_questions') %}
+    <form action="/assessment/{{assessment.get('id')}}/follow_up_questions">
+        <button class="btn btn-primary col-12 answer_follow_up_questions">Answer Follow-up Questions</button>
+    </form>
+    {% endif %}
+</div>
+
+<hr>
+{% endif %}
+
+<div id="answered_questions">
+    <h4>Answered Questions</h4>
+    <div class="alert {{card_theme}} col-12 mx-0">
+        <p>Chief Complaint: {{assessment.get('symptom_statement')}}</p>
+    </div>
+    <ul>
+    {% for question in assessment.get('questions') %}
+        <li class="alert {{card_theme}} row justify-content-between align-items-start flex-nowrap" id="{{question['name']}}">
+            <div class="col-9">
+                <p>Question: {{question['question']}}</p>
+                <p>Answer: {{question['answer']}}</p>    
+            </div>
+            <div class="row col-2">
+                <a href="/assessment/{{assessment.get('id')}}/edit_question/{{question['name']}}" class="col btn btn-primary btn-sm mx-1">Edit</a>
+                <button class="col btn btn-danger btn-sm mx-1 deleteQuestion" value="assessment/{{assessment.get('id')}}/delete_question/{{question['name']}}">Delete</button>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% if g.user.title %}
+    <div id="suggested_tests">
+        <h4>Suggested Tests</h4>
+
+        {% if assessment.get('suggestions_tests') %}
+            <ul>
+            {% for test in assessment.get('suggestions_tests') %}
+                <li id="{{test[0]}}" class="alert {{card_theme}} row">
+                    <p>{{test[1]}}</p>
+                </li>
+            {% endfor %}    
+            </ul>
+        {% else %}
+            <p class="alert {{card_theme}}">Based on the questions answered, no tests were suggested.</p>
+        {% endif %}
+    </div>
+
+    <div id="analysis_results">
+        <h4>Assessment Results</h4>
+
+        {% if assessment.get('analysis_results') %}
+        <p class="alert {{card_theme}}">This is a list of potential diagnoses in order of probability. Note: The doctor must review the assessment and make an official diagnosis.</p>
+
+            <ul>
+            {% for disease in assessment.get('analysis_results') %}
+                <li class="alert {{card_theme}} row">
+                    <p>{{disease}}</p>
+                </li>
+            {% endfor %}    
+            </ul>
+        {% else %}
+            <p class="alert {{card_theme}}">Based on the questions answered, no potential diagnoses were suggested.</p>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% endblock %}

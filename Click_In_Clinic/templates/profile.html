@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class="mb-5">Profile</h2>
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-between alert {{card_theme}}">
+    <h3 class="col-12">User Information</h3>
+
+    <div class="col-6">
+        <p>Name: {{g.user.fullname}}</p>
+        <p>Username: {{g.user.username}}</p>
+        <p>Phone Number: {{g.user.phone_number}}</p>    
+        <p>Email: {{g.user.email}}</p>    
+    </div>
+    {% if g.user.title %}
+    <div class="col-6">
+        <p>Title: {{g.user.title}}</p>
+        <p>Institution: {{g.user.institution.name}}</p>
+        <p>Institution Address: {{g.user.institution.address}}</p>
+    </div>
+    {% endif %}
+    
+</div>
+<hr>
+
+{% endblock %}

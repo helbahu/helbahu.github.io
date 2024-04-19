@@ -1,0 +1,26 @@
+{% extends 'assessment_summary.html' %}
+
+{% block nav_btns %}
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+<ul class="navbar-nav">
+    {% if g.user.title == 'Doctor' %}
+    <li class="nav-item active">
+        <form action="/assessment/{{assessment.get('id')}}/review_assessment" class="mr-lg-5">
+            <button class="col-12 nav-link btn btn-success text-light mr-5">Review Assessment</button>
+        </form> 
+    </li>
+    {% endif %}
+    <li class="nav-item active">
+        <form action="/assessment/{{assessment.get('id')}}/delete_assessment" class="mr-lg-5" method="post">
+            <button class="col-12 nav-link btn btn-danger text-light" type="submit">Delete</button>
+        </form> 
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link btn btn-primary text-light" type="button" href="/{{g.user.username}}/assessments">Back</a>    
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block statement %}
+{% endblock %}

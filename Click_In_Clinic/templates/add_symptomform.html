@@ -1,0 +1,26 @@
+{% extends 'symptomform.html' %}
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Assessment</h2>
+</div>
+<h5><center>For best results, add all symptoms and answer all relvant questions for each symptom.</center></h5>
+
+{% endblock %}
+
+{% block btn %}
+<div class="col-6 mx-auto p-4">
+    <button id="add_symptom_button" class="btn btn-secondary btn-sm col-12">Add Symptom</button>
+</div>
+<div class="row justify-content-between flex-nowrap align-items-center col-12">
+    <input type="checkbox" name="added_all_symptoms_checkbox" id="added_all_symptoms_checkbox" class="mr-4">
+    <label for="added_all_symptoms_checkbox">I have added all symptoms and answered all relvant questions for each symptom.
+    </label>    
+</div>
+{% endblock %}
+
+{% block otherbtn %}
+<div class="col-6 mx-auto p-4">
+    <a href="/{{user.username}}/assessment/suggested_questions" id="submit_button" class="btn btn-success btn-lg col-12 disabled">Next</a>
+</div>    
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'verification.html' %}
+
+{% block title %}
+<h2 class="mb-5">Delete Users</h2>
+{% endblock %}
+
+{% block action_btn_class %}
+class="btn btn-danger btn-lg col-sm-3 col-md-2 delete_user_btn"
+{% endblock %}
+
+{% block action_btn_title %}
+Delete
+{% endblock %}
+
+{% block patient_list %}
+    {% if g.user.is_non_hcp_admin %}
+    <h3>Patients</h3>
+    <div class="list_container_style1">
+    {% for p in patients %}
+        <div id="{{p.username}}-container">
+            <div class="row justify-content-between">
+                <button class="btn btn-{{my_theme}} btn-lg col" type="button" data-toggle="collapse" data-target="#collapse-{{p.username}}" aria-expanded="false" aria-controls="collapseExample">
+                    {{p.fullname}} ({{p.username}})
+                </button>
+                <button class="btn btn-danger btn-lg col-sm-3 col-md-2 delete_user_btn" id="{{p.username}}" data-type="patient">
+                    Delete
+                </button>           
+            </div>
+            <div class="collapse" id="collapse-{{p.username}}">
+                <div class="card card-body {{card_theme}}">
+                    <div class="row">
+                        <div class="col">
+                            <p>Name: {{p.fullname}}</p>
+                            <p>Username: {{p.username}}</p>
+                        </div>
+                        <div class="col">
+                            <p>Phone Number: {{p.phone_number}}</p>    
+                            <p>Email: {{p.email}}</p>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <hr>
+        </div>
+
+    {% endfor %}
+    </div>
+    {% endif %}
+
+{% endblock %}

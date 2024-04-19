@@ -1,0 +1,63 @@
+.main-dark{
+    background-color: rgb(23, 23, 41);
+    color: white;
+}
+.main-secondary{
+    background-color: rgb(159, 159, 179);
+}
+.main-info{
+    background-color: rgb(200, 214, 202);
+}
+.main-success{
+    background-color: rgb(154, 171, 156);
+}
+
+
+.flash_messages{
+    position: absolute;
+    top: 3vh;
+    right: 2vh;
+}
+
+.main_container{
+    position: relative;
+}
+
+/* Assessment Card */
+.bg_hover_light :hover{
+    background-color: rgb(234, 234, 234);
+    border-radius: 2vh;
+}
+.bg_hover_dark :hover{
+    background-color: rgb(69, 69, 69);
+    border-radius: 2vh;
+}
+.bg_hover_primary :hover{
+    background-color: rgb(222, 236, 255);
+    border-radius: 2vh;
+}
+.bg_hover_secondary :hover{
+    background-color: rgb(203, 203, 203);
+    border-radius: 2vh;
+}
+.bg_hover_info :hover{
+    background-color: rgb(206, 255, 212);
+    border-radius: 2vh;
+}
+.bg_hover_success :hover{
+    background-color: rgb(210, 255, 215);
+    border-radius: 2vh;
+}
+
+
+.notification_bell{
+    width: 30px;
+}
+
+.list_container_style1{
+    margin: 0%;
+    padding: 0%;
+    height: 65vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

@@ -1,0 +1,19 @@
+{% extends 'symptomform.html' %}
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Assessment</h2>
+</div>
+<h5><center>Please select your doctor if available, so they can review this assessment.</center></h5>
+
+{% endblock %}
+
+{% block field_conditions %}
+    <button type="button" class="col-3 btn btn-sm btn-primary add_doctor">Add Doctor</button>
+{% endblock %}
+
+{% block btn %}
+<div class="col-10 mx-auto p-4">
+    <button class="btn btn-success btn-lg col-12">Send Assessment to Doctor</button>
+</div>
+{% endblock %}

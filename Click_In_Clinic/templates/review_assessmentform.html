@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block nav_btns %}
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a href="/assessment/{{assessment_id}}" class="nav-link btn btn-danger text-light">Cancel</a>            
+        </li>
+    </ul>
+</div>
+{% endblock %}            
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Review Assessment</h2>
+</div>
+<h5>Review the patient assessment, write all your notes notes and add any follow-up questions you would like the patient to answer.
+    Note that you do not have to give an official diagnosis at this time, you can come back to review the assessment.
+</h5>
+{% endblock %}
+
+{% block content %}
+
+<form id="symptomform" method="post" class="col-11 col-md-8 col-lg-6 mx-auto mt-5 px-0" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+
+    {% for field in form
+        if field.widget.input_type != 'hidden' %}
+            <p class="form-group {{field.name}}-parent">
+                {{field.label (class_='text-dark')}}
+                    {% if field.name == 'questions' %}
+                        <div class="row">
+                            {{field (class_='form-control col-9 questions_input')}}
+
+                            {% block field_conditions %}
+                                <button type="button" class="col-3 btn btn-sm btn-primary add_follow_up_question" id="{{assessment_id}}">Add Question</button>
+                            {% endblock %}
+                        </div>
+                    {% else %}
+                        {{field (class_='form-control')}}
+                    {% endif %}
+    
+                    <small class="form-text text-muted">
+                    {% for err in field.errors %}
+                    {{err}}
+                    {% endfor%}
+                    </small>
+            </p>
+            
+    {% endfor %}
+    <div class="alert {{card_theme}} mx-0 px-2">
+        <h5>Follow Up Questions</h5>
+        <ul class="follow_up_questions_display mx-0 px-1">
+            {% if follow_up_questions %}
+                {% for q in follow_up_questions %}
+                <li class="row justify-content-between flex-nowrap mb-2" id="{{q[0]}}">
+                    <div class="col-9">
+                        <p>{{q[1]}}</p>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="col btn btn-danger btn-sm deleteFollowUpQuestion" value="{{assessment_id}}">Del</button>
+                    </div>
+                </li>
+                {% endfor %}
+            {% else %}
+            <p>No follow up questions added.</p>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-8 mx-auto p-4">
+        <button class="btn btn-success btn-lg col-12">Done</button>
+    </div>
+</form>
+
+{% endblock %}

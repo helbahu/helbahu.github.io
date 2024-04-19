@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class="mb-5">Verification</h2>
+{% endblock %}
+
+{% block content %}
+
+<h3>Healthcare Professionals</h3>
+<div class="list_container_style1">
+{% for hcp in hcps if hcp.username != g.user.username %}
+    <div id="{{hcp.username}}-container">
+        <div class="row justify-content-between">
+            <button class="btn btn-{{my_theme}} btn-lg col" type="button" data-toggle="collapse" data-target="#collapse-{{hcp.username}}" aria-expanded="false" aria-controls="collapseExample">
+                {{hcp.fullname}} ({{hcp.username}})
+            </button>
+            <button {% block action_btn_class %}class="btn btn-success btn-lg col-sm-3 col-md-2 verify_hcp_btn"{% endblock %} 
+            data-type="hcp"
+            id="{{hcp.username}}">
+
+                {% block action_btn_title %}
+                Verify
+                {% endblock %}
+            </button>           
+        </div>
+        <div class="collapse" id="collapse-{{hcp.username}}">
+            <div class="card card-body {{card_theme}}">
+                <div class="row">
+                    <div class="col">
+                        <p>Name: {{hcp.fullname}}</p>
+                        <p>Username: {{hcp.username}}</p>
+                        <p>Phone Number: {{hcp.phone_number}}</p>    
+                        <p>Email: {{hcp.email}}</p>            
+                    </div>
+                    <div class="col">
+                        <p>Title: {{hcp.title}}</p>
+                        <p>Institution: {{hcp.institution.name}}</p>
+                        <p>Institution Address: {{hcp.institution.address}}</p>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    <hr>
+    </div>
+{% endfor %}
+</div>
+
+{% block patient_list %}
+{% endblock %}
+
+{% endblock %}

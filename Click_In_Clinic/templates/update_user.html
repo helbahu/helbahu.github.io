@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block nav_btns %}
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link btn btn-danger text-light" type="button" href="/users/{{username}}">Cancel</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Edit Profile</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="col-11 col-md-8 col-lg-6 mx-auto mt-5" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+
+    {% for field in form
+        if field.widget.input_type != 'hidden' %}
+        {% if field.name == 'password' %}
+        <div class="col-8 mx-auto p-4">
+            <button class="btn btn-success btn-lg col-12">Update</button>
+        </div>
+
+        <p class="mt-4 h5">Change Password</p>
+        {% endif %}
+
+        <p class="form-group">
+            {{field.label}}
+            {{field (class_='form-control')}}
+            <small class="form-text text-muted">
+                {% for err in field.errors %}
+                {{err}}
+                {% endfor%}
+            </small>
+        </p>
+
+    {% endfor %}
+        <div class="col-8 mx-auto p-4">
+            <button class="btn btn-success btn-lg col-12">{% block btn %}Change Password{% endblock %}</button>
+        </div>
+</form>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{% extends 'symptomform.html' %}
+
+{% block cancel_path %} 
+    href="/assessment/{{assessment_id}}" 
+{% endblock %}
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center">
+    <h2>Follow-up Questions <small>(Questions: {{follow_up_questions_remaining}})</small></h2>
+</div>
+<p><center>Please answer all the follow-up questions provided. All the questions you answer will be saved so you don't have to answer all the questions at once, you may cancel and come back.</center></p>
+{% endblock %}

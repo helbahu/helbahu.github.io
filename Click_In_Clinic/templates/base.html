@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click-In-Clinic</title>
+
+    {% block cdnstyle %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% endblock %}
+          
+    <link rel="stylesheet" href="/static/main.css">
+
+    <link rel="shortcut icon" href="/static/click_in_clinic_logo.png">
+</head>
+
+{% set my_theme = session.get('theme') if session.get('theme') else 'light' %}
+{% set card_theme = "alert-"+my_theme if my_theme in ["primary","secondary","info","success"] else "bg-"+my_theme %}
+
+<body class="container-fluid p-0 main-{{my_theme}}">
+
+    {% block nav_bar %}
+    <div class="col-12 mb-2 mx-0 p-0">
+        <nav class="navbar navbar-expand-lg navbar-{{my_theme}} bg-{{my_theme}}">
+            <a class="navbar-brand" href="/">
+                <img src="/static/click_in_clinic_logo.png" width="30" height="30" alt="">
+            </a>
+            <a class="navbar-brand btn btn-{{my_theme}}" href="/">Click-In-Clinic</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            {% block nav_btns %}
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="btn btn-{{my_theme}} nav-link" href="/users/{{g.user.username}}">Profile <small>({{g.user.username}})</small></a>
+                </li>
+
+                {% if not g.user.is_non_hcp_admin %}
+                <li class="nav-item">
+                  <a  {% if g.user.title and not g.user.is_verified %} class="btn btn-{{my_theme}} nav-link disabled"
+                      {% else %}class="btn btn-{{my_theme}} nav-link"
+                      {% endif %} 
+                  href="/{{g.user.username}}/assessment">Start Assessment</a>
+                </li>
+                <li class="nav-item">
+                  <a   {% if g.user.title and not g.user.is_verified %} class="btn btn-{{my_theme}} nav-link disabled"
+                  {% else %}class="btn btn-{{my_theme}} nav-link"
+                  {% endif %}
+                   href="/{{g.user.username}}/assessments">
+                    {% if g.user.title %}
+                        Patient Assessments
+                    {% else %}
+                        My Assessments 
+                    {% endif %}
+                  </a>    
+                </li>
+                {% if g.user.title %}
+                <li class="nav-item">
+                    <button {% if g.user.title and not g.user.is_verified %} class="col-12 btn btn-{{my_theme}} nav-link disabled add_patient"
+                    {% else %}class="col-12 btn btn-{{my_theme}} nav-link add_patient"
+                    {% endif %} >Add Patient</button>
+                </li>  
+                {% endif %}
+
+
+                {% endif %}
+
+                {% if g.user.is_admin %}
+                <li class="nav-item dropdown">
+                    <a class="btn btn-{{my_theme}} nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Admin Privlages
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/verification">Verify Healthcare Professionals</a>    
+                        <a class="dropdown-item" href="/make_admin">Give Admin Privlages</a>    
+                        <a class="dropdown-item" href="/add_institution">Add Institution</a>    
+                        <a class="dropdown-item" href="/delete_institution">Delete Institution</a>    
+                        <a class="dropdown-item" href="/delete_users">Delete Users</a>    
+                    </div>
+                  </li>
+                {% endif %}
+                  
+                <li class="nav-item dropdown">
+                  <a class="btn btn-{{my_theme}} nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/users/{{g.user.username}}/edit">Edit Profile</a>
+                    <form action="/users/{{g.user.username}}/delete" method="post">
+                        <button type="submit" class="btn dropdown-item">Delete User</button>            
+                    </form>
+                    <a class="dropdown-item" href="/settings">Settings</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {% endblock %}
+
+        </nav> 
+    </div>
+    {% endblock %}
+
+    {% block carousel %}
+    {% endblock %}
+
+
+<div class="container pt-4 mt-4 main_container">
+    
+    {% block title %}
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}    
+</div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <div class="flash_messages col-6">
+        {% if messages %}
+            {% for c,msg in messages %}
+            <p class="alert alert-{{c}}">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% endwith %}
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+      {% block jsdelivery_scripts %}
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      {% endblock %}
+    <script src="/static/main.js"></script>
+</body>

@@ -1,0 +1,1353 @@
+[
+    {
+        "label": "All Questions"
+    },
+    {
+        "label": "Abdominal Cramps",
+        "search": [
+            "abdominal cramps",
+            "adbdominal pain",
+            "abdominal discomfort"
+        ]
+    },
+    {
+        "label": "Abdominal Fullness (Distension or Bloating)",
+        "search": [
+            "abdominal fullness",
+            "distention",
+            "bloating"
+        ]
+    },
+    {
+        "label": "Abdominal Pain (stomach pain)",
+        "search": [
+            "adbdominal pain",
+            "abdominal discomfort",
+            "stomach pain",
+            "belly pain"
+        ]
+    },
+    {
+        "label": "Back pain",
+        "search": [
+            "low back pain",
+            "pain in back",
+            "sciatica",
+            "lower back pain",
+            "spine pain"
+        ]
+    },
+    {
+        "label": "Bleeding from gums",
+        "search": [
+            "bleeding from gums"
+        ]
+    },
+    {
+        "label": "Blindness (in one or both eyes)",
+        "search": [
+            "blindness",
+            "blind",
+            "can't see"
+        ]
+    },
+    {
+        "label": "Blood in Semen",
+        "search": [
+            "blood in semen"
+        ],
+        "sexspecific": "Male"
+    },
+    {
+        "label": "Blood in Stool - red or black (melena) stool",
+        "search": [
+            "hematochezia",
+            "melena",
+            "red or black (melena) stool"
+        ]
+    },
+    {
+        "label": "Blood in Urine",
+        "search": [
+            "hematuria",
+            "bloody urine",
+            "blood in urine"
+        ]
+    },
+    {
+        "label": "Blood in Urine around time of Period",
+        "search": [
+            "hematuria",
+            "hematuria around period",
+            "blood in urine",
+            "vaginal spotting or bleeding",
+            "vaginal spotting",
+            "vaginal bleeding"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Bone/Joint Pain (localized) - localized bone/joint pain (other than low back pain), without obvious trigger/cause",
+        "search": [
+            "localized bone or joint pain",
+            "bone pain",
+            "joint pain",
+            "elbow pain",
+            "knee pain",
+            "hip pain"
+        ]
+    },
+    {
+        "label": "Burning with Urination",
+        "search": [
+            "burning with urination",
+            "dysuria"
+        ]
+    },
+    {
+        "label": "Chest pain",
+        "search": [
+            "chest pains",
+            "angina",
+            "chest discomfort",
+            "pain in chest"
+        ]
+    },
+    {
+        "label": "Chills",
+        "search": [
+            "chills"
+        ]
+    },
+    {
+        "label": "Choking Swallow - choking or coughing spells after meals or drinks",
+        "search": [
+            "choking swallow",
+            "aspiration",
+            "coughing",
+            "choking"
+        ]
+    },
+    {
+        "label": "Clubbing of the fingers - thickening of the fingers,fingertips and/or nails that gives them an abnormal, rounded appearance.",
+        "search": [
+            "clubbing of the fingers",
+            "shape of fingers",
+            "fingertips",
+            "nails"
+        ]
+    },
+    {
+        "label": "Cold Intolerance",
+        "search": [
+            "cold intolerance",
+            "can't take any cold",
+            "handle cold"
+        ]
+    },
+    {
+        "label": "Cold Sores",
+        "search": [
+            "zoster",
+            "cold sores",
+            "herpetic",
+            "herpes",
+            "sores on mouth",
+            "sores around mouth"
+        ]
+    },
+    {
+        "label": "Confusion or Disoriented - meaning not knowing your age, name or whereabouts",
+        "search": [
+            "change in mental status",
+            "confusion",
+            "disoriented",
+            "memory",
+            "forget"
+        ]
+    },
+    {
+        "label": "Constipation",
+        "search": [
+            "constipation",
+            "constipated",
+            "stool",
+            "bowel movement",
+            "bowel",
+            "hard stool"
+        ]
+    },
+    {
+        "label": "Cough",
+        "search": [
+            "coughing",
+            "cough"
+        ]
+    },
+    {
+        "label": "Coughing up blood",
+        "search": [
+            "hemoptysis",
+            "coughed up blood",
+            "coughing up blood",
+            "coughing blood",
+            "blood in sputum"
+        ]
+    },
+    {
+        "label": "Dark Urine",
+        "search": [
+            "urine dark",
+            "urine is dark",
+            "pee is dark",
+            "dark pee",
+            "dark urine"
+        ]
+    },
+    {
+        "label": "Decreased Sense of Touch or tingling, or burning along skin",
+        "search": [
+            "localized sensory deficit",
+            "decreased sensation to touch",
+            "decreased sense to touch",
+            "tingling skin",
+            "burning skin",
+            "numbness"
+        ]
+    },
+    {
+        "label": "Depressed mood",
+        "search": [
+            "decreased mood",
+            "depressed mood",
+            "depressed",
+            "sad"
+        ]
+    },
+    {
+        "label": "Diarrhea",
+        "search": [
+            "diarrhea",
+            "loose stools",
+            "loose bowels"
+        ]
+    },
+    {
+        "label": "Difficulty Speaking - unusual difficulty speaking in an understandable manner",
+        "search": [
+            "aphasia",
+            "difficulty speaking"
+        ]
+    },
+    {
+        "label": "Difficulty Swallowing",
+        "search": [
+            "dysphagia",
+            "problems swallowing",
+            "food stuck in throat",
+            "difficulty swallowing"
+        ]
+    },
+    {
+        "label": "Difficulty Swallowing Liquids",
+        "search": [
+            "fluid swallow",
+            "dysphagia with fluids",
+            "problems swallowing"
+        ]
+    },
+    {
+        "label": "Difficulty Swallowing Solids",
+        "search": [
+            "solids swallow",
+            "dysphagia with solids",
+            "food stuck in throat",
+            "problems swallowing"
+        ]
+    },
+    {
+        "label": "Difficulty Understanding Speech",
+        "search": [
+            "sensory aphasia",
+            "problems understanding other people"
+        ]
+    },
+    {
+        "label": "Difficulty Walking",
+        "search": [
+            "ambulate",
+            "claudication",
+            "walking",
+            "difficulty walking",
+            "trouble walking"
+        ]
+    },
+    {
+        "label": "Double vision",
+        "search": [
+            "double vision",
+            "see double"
+        ]
+    },
+    {
+        "label": "Dry Eyes",
+        "search": [
+            "dry eyes",
+            "eyes are dry"
+        ]
+    },
+    {
+        "label": "Dry Retching - feels like throwing up, but nothing comes up",
+        "search": [
+            "dry retching",
+            "throwing up nothing",
+            "throwing up"
+        ]
+    },
+    {
+        "label": "Dry Skin",
+        "search": [
+            "dry skin",
+            "itchy skin"
+        ]
+    },
+    {
+        "label": "Dry mouth",
+        "search": [
+            "dry mouth",
+            "mouth is dry"
+        ]
+    },
+    {
+        "label": "Ear Discharge",
+        "search": [
+            "ear discharge",
+            "discharge from ear"
+        ]
+    },
+    {
+        "label": "Ear pain",
+        "search": [
+            "ear pain",
+            "pain in ear"
+        ]
+    },
+    {
+        "label": "Eating Less",
+        "search": [
+            "eating significantly less",
+            "food intake decreased",
+            "eating less"
+        ]
+    },
+    {
+        "label": "Erythema Nodosum - flat, red, firm, hot, and many times painful lumps that usually appear on shins",
+        "search": [
+            "erythema nodosum",
+            "painful lumps",
+            "lumps on shins",
+            "bumps on shins",
+            "red lumps",
+            "red bumps",
+            "bumps",
+            "painful bumps"
+        ]
+    },
+    {
+        "label": "Excessive Hair growth (Hirsutism)",
+        "search": [
+            "excessive hair growth",
+            "excess hair growth",
+            "hirsutism"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Excessive Thirst",
+        "search": [
+            "polydipsia",
+            "thirsty",
+            "excessive thirst"
+        ]
+    },
+    {
+        "label": "Excessive sweating",
+        "search": [
+            "sweating",
+            "sweats",
+            "skin sweating",
+            "diaphoresis",
+            "excessive sweating",
+            "excess sweating"
+        ]
+    },
+    {
+        "label": "Eye Itchiness",
+        "search": [
+            "eyes feeling itchy",
+            "eyes itchiness",
+            "itchy eyes",
+            "watery eyes"
+        ]
+    },
+    {
+        "label": "Fatigue",
+        "search": [
+            "fatigue",
+            "exhaustion",
+            "tired",
+            "tiredness",
+            "lethargy",
+            "lethargic",
+            "sleepy",
+            "sleepiness",
+            "drowsiness",
+            "drowsy"
+        ]
+    },
+    {
+        "label": "Fatty Stool - pale or light-colored stool",
+        "search": [
+            "stools fatty",
+            "fatty stool"
+        ]
+    },
+    {
+        "label": "Fecal Urgency - urgency to move bowels",
+        "search": [
+            "fecal urgency",
+            "urgency to move bowels",
+            "bowel movement"
+        ]
+    },
+    {
+        "label": "Fever",
+        "search": [
+            "fever",
+            "temperature"
+        ]
+    },
+    {
+        "label": "Flank Pain (Pain in Sides)",
+        "search": [
+            "flank pain",
+            "side pain"
+        ]
+    },
+    {
+        "label": "Flatulence (Intestinal gas)",
+        "search": [
+            "flatulence",
+            "gas",
+            "gassy",
+            "farting",
+            "passing wind"
+        ]
+    },
+    {
+        "label": "Foamy Urine",
+        "search": [
+            "foamy and bubbly",
+            "foamy urine",
+            "bubbly urine",
+            "urine is foamy",
+            "pee is foamy",
+            "foamy pee"
+        ]
+    },
+    {
+        "label": "Foot pain",
+        "search": [
+            "pain in distal lower extremities",
+            "pain in toes or feet",
+            "foot pain",
+            "multiple joints pains",
+            "burning in feet"
+        ]
+    },
+    {
+        "label": "Frequent urination (Urinary Frequency)",
+        "search": [
+            "urinary frequency",
+            "frequent urination",
+            "peeing frequently"
+        ]
+    },
+    {
+        "label": "Frontal Headache - headaches in front of you head",
+        "search": [
+            "frontal headache",
+            "headaches in front of you head"
+        ]
+    },
+    {
+        "label": "Generalized Bone Pain - all or almost all bones involved",
+        "search": [
+            "generalized bones' pains",
+            "bone pain",
+            "general bone pain"
+        ]
+    },
+    {
+        "label": "Generalized Muscle Pain - all or almost all muscles involved",
+        "search": [
+            "myalgia",
+            "generalized muscle pain",
+            "muscle pain"
+        ]
+    },
+    {
+        "label": "Groin pain",
+        "search": [
+            "pain in the right or left inguinal area",
+            "radiating to the groin",
+            "groin pain",
+            "genital pain",
+            "pain in groin",
+            "pain in genitals"
+        ],
+        "sexspecific": "Male"
+    },
+    {
+        "label": "Gynecomastia - abnormal non-cancerous growth of breast tissue",
+        "search": [
+            "gynecomastia",
+            "gyno"
+        ]
+    },
+    {
+        "label": "Hallucinations",
+        "search": [
+            "hallucinations"
+        ]
+    },
+    {
+        "label": "Hard Breathing (Difficulty Breating)",
+        "search": [
+            "shortness of breath",
+            "orthopnea",
+            "dyspnea",
+            "difficulty breathing",
+            "heavy breathing",
+            "hard breathing"
+        ]
+    },
+    {
+        "label": "Headache",
+        "search": [
+            "headache"
+        ]
+    },
+    {
+        "label": "Headache in back of head",
+        "search": [
+            "headache felt in the back of head"
+        ]
+    },
+    {
+        "label": "Hearing Loss",
+        "search": [
+            "hearing loss",
+            "loss of hearing"
+        ]
+    },
+    {
+        "label": "Heart Burn (Gastric reflux)",
+        "search": [
+            "heart burn",
+            "retrosternal burning",
+            "gastric reflux",
+            "epigastric reflux"
+        ]
+    },
+    {
+        "label": "Heat Intolerance",
+        "search": [
+            "heat intolerance",
+            "can't take any heat",
+            "handle heat"
+        ]
+    },
+    {
+        "label": "Heavy Periods",
+        "search": [
+            "menorrhagia",
+            "heavy periods"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Height Loss",
+        "search": [
+            "height loss"
+        ]
+    },
+    {
+        "label": "Hives - swollen, pale red plaques or bumps on the skin",
+        "search": [
+            "urticaria",
+            "hives",
+            "bumps",
+            "red bumps",
+            "plaques"
+        ]
+    },
+    {
+        "label": "Hoarseness",
+        "search": [
+            "hoarse voice",
+            "hoarseness",
+            "hoarse"
+        ]
+    },
+    {
+        "label": "Hyperpigmented Skin (skin getting darker)",
+        "search": [
+            "skin hyperpigmented",
+            "skin getting darker",
+            "skin being darker",
+            "skin darkening"
+        ]
+    },
+    {
+        "label": "Hypertension (High Blood Pressure)",
+        "search": [
+            "hypertension",
+            "high blood pressure"
+        ]
+    },
+    {
+        "label": "Hypotension (Low Blood Pressure)",
+        "search": [
+            "hypotension",
+            "low blood pressure"
+        ]
+    },
+    {
+        "label": "Incomplete Stool Evacuation",
+        "search": [
+            "incomplete stool evacuation",
+            "bowel movement",
+            "stool"
+        ]
+    },
+    {
+        "label": "Incomplete Urination - partial or complete inability to empty bladder",
+        "search": [
+            "inability to empty bladder",
+            "producing less urine"
+        ]
+    },
+    {
+        "label": "Irregular Periods",
+        "search": [
+            "metrorrhagia",
+            "irregular periods"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Itchy Skin",
+        "search": [
+            "skin itchiness",
+            "itchy skin"
+        ]
+    },
+    {
+        "label": "Jaw Pain",
+        "search": [
+            "pain of jaw",
+            "pain in jaw",
+            "pain behind jaw",
+            "jaw pain"
+        ]
+    },
+    {
+        "label": "Jaw feeling blocked (not fully opening)",
+        "search": [
+            "inability to fully open the mouth",
+            "pain of jaw",
+            "jaw pain",
+            "jaw feeling blocked"
+        ]
+    },
+    {
+        "label": "Leg pain",
+        "search": [
+            "claudication in lower extremities",
+            "pain or discomfort in lower extremities",
+            "leg pain",
+            "pain in leg"
+        ]
+    },
+    {
+        "label": "Lightheadedness",
+        "search": [
+            "lightheadedness",
+            "lightheaded",
+            "palpitations",
+            "dizziness",
+            "dizzy"
+        ]
+    },
+    {
+        "label": "Long-term Memory Loss - cannot remember things from weeks to years ago",
+        "search": [
+            "decreased long term memory",
+            "memory loss",
+            "memory"
+        ]
+    },
+    {
+        "label": "Loss of Consciousness",
+        "search": [
+            "loss of consciousness",
+            "faint"
+        ]
+    },
+    {
+        "label": "Loss of smell",
+        "search": [
+            "lost smell",
+            "decreased sense of smell",
+            "sense of smell",
+            "loss of smell"
+        ]
+    },
+    {
+        "label": "Loss of taste",
+        "search": [
+            "lost taste",
+            "decreased sense of taste",
+            "sense of taste",
+            "loss of taste",
+            "decrease in taste"
+        ]
+    },
+    {
+        "label": "Low Back pain",
+        "search": [
+            "low back pain",
+            "lower back pain"
+        ]
+    },
+    {
+        "label": "Mouth ulcers",
+        "search": [
+            "aphtous ulcers",
+            "mouth ulcers",
+            "ulcers in mouth"
+        ]
+    },
+    {
+        "label": "Multiple Bone/Joint Pain",
+        "search": [
+            "pain of multiple joints",
+            "knee pain",
+            "elbow pain",
+            "arthritis"
+        ]
+    },
+    {
+        "label": "Muscle Weakness",
+        "search": [
+            "muscle weakness",
+            "weakness",
+            "numbness"
+        ]
+    },
+    {
+        "label": "Nasal congestion (Stuffy nose)",
+        "search": [
+            "nasal congestion",
+            "rhinorrhea",
+            "congested",
+            "runny nose",
+            "stuffy nose"
+        ]
+    },
+    {
+        "label": "Nausea and vomiting",
+        "search": [
+            "nausea",
+            "vomiting",
+            "throwing up",
+            "puking"
+        ]
+    },
+    {
+        "label": "Neck Stiffness or Pain",
+        "search": [
+            "stiff neck",
+            "stiffness in the neck",
+            "neck pain"
+        ]
+    },
+    {
+        "label": "Night Time Urination",
+        "search": [
+            "nocturia",
+            "night time urination",
+            "peeing"
+        ]
+    },
+    {
+        "label": "Orthostatic Lightheadedness - dizzy or lightheaded after standing-up",
+        "search": [
+            "orthostatic lightheadedness after standing-up",
+            "orthostatic"
+        ]
+    },
+    {
+        "label": "Pain around Sinuses",
+        "search": [
+            "pain around your sinuses",
+            "sinus pain",
+            "nasal pain",
+            "nose pain",
+            "pain around nose"
+        ]
+    },
+    {
+        "label": "Pain behind the Jaw",
+        "search": [
+            "pain behind the jaw",
+            "pain behind jaw",
+            "jaw pain",
+            "pain of jaw",
+            "pain in jaw"
+        ]
+    },
+    {
+        "label": "Pain during Orgasm",
+        "search": [
+            "perineal or prostate pain",
+            "perineal pain",
+            "prostate pain",
+            "pain during orgasm",
+            "pain during ejaculation"
+        ],
+        "sexspecific": "Male"
+    },
+    {
+        "label": "Pain during Sex",
+        "search": [
+            "dyspaurenia",
+            "pain during sex"
+        ]
+    },
+    {
+        "label": "Pain of Voice box",
+        "search": [
+            "pain of voice box",
+            "pain when coughing",
+            "pain when talking",
+            "pain when speaking"
+        ]
+    },
+    {
+        "label": "Painful urination",
+        "search": [
+            "urination pain",
+            "dysuria",
+            "painful urination"
+        ]
+    },
+    {
+        "label": "Penile or Urethral Discharge",
+        "search": [
+            "abnormal penile discharge",
+            "urethral discharge",
+            "discharge from penis"
+        ],
+        "sexspecific": "Male"
+    },
+    {
+        "label": "Perianal Itchiness",
+        "search": [
+            "perianal area itchiness"
+        ]
+    },
+    {
+        "label": "Perineal Itchiness",
+        "search": [
+            "perineal itchiness"
+        ]
+    },
+    {
+        "label": "Petechiae - tiny, circular, non-raised, non blanching after pressed patches on the skin",
+        "search": [
+            "petechiae",
+            "patches on the skin",
+            "patches",
+            "red patches",
+            "red patch"
+        ]
+    },
+    {
+        "label": "Pica - unusual cravings and appetite for unusual, inedible things, like clay, paint chips, soil, matches, ice cubes, raw rice or flour",
+        "search": [
+            "pica ",
+            "unusual cravings",
+            "craving"
+        ]
+    },
+    {
+        "label": "Polyuria - urinating too much or more than usual",
+        "search": [
+            "Polyuria",
+            "peeing too much",
+            "urinating too much"
+        ]
+    },
+    {
+        "label": "Postnasal drainange",
+        "search": [
+            "postnasal drainage",
+            "postnasal drip",
+            "back of throat"
+        ]
+    },
+    {
+        "label": "Rapid Heartbeat",
+        "search": [
+            "fast heartbeat",
+            "rapid heartbeat",
+            "arrhythmia",
+            "tachycardia"
+        ]
+    },
+    {
+        "label": "Rectal pain",
+        "search": [
+            "pain in anal area",
+            "pain in rectum",
+            "pain in anus",
+            "rectal pain",
+            "anal pain",
+            "rectal"
+        ]
+    },
+    {
+        "label": "Regurgitation of Food",
+        "search": [
+            "regurgitation of food",
+            "regurgitation"
+        ]
+    },
+    {
+        "label": "Restless Legs - pain or discomfort in lower extremities, that resolves or improves with movement",
+        "search": [
+            "pain or discomfort in lower extremities",
+            "restless legs",
+            "leg pain",
+            "leg discomfort",
+            "pain in legs"
+        ]
+    },
+    {
+        "label": "Salt Craving",
+        "search": [
+            "salt craving",
+            "craving salt",
+            "craving"
+        ]
+    },
+    {
+        "label": "Seasonal Allergies",
+        "search": [
+            "seasonal",
+            "eyes itchiness",
+            "nasal congestion",
+            "congested",
+            "sneezing",
+            "postnasal drainage",
+            "runny nose"
+        ]
+    },
+    {
+        "label": "Seizure - involunatry repetive movements or rhythmic shaking of the entire body, or part of the body",
+        "search": [
+            "seizure",
+            "epilepsy",
+            "seizures during the loss of consciousness"
+        ]
+    },
+    {
+        "label": "Short-term Memory Loss - cannot remember things from seconds to weeks ago",
+        "search": [
+            "decreased short term memory",
+            "memory loss",
+            "memory"
+        ]
+    },
+    {
+        "label": "Shortness of breath",
+        "search": [
+            "shortness of breath",
+            "dyspnea"
+        ]
+    },
+    {
+        "label": "Skin Bruising",
+        "search": [
+            "skin bruising",
+            "easily bruising",
+            "easy bruising",
+            "bruising",
+            "bruise"
+        ]
+    },
+    {
+        "label": "Skin Erythema - Redness of skin and usually warm",
+        "search": [
+            "skin erythema",
+            "skin redness"
+        ]
+    },
+    {
+        "label": "Skin Flushing",
+        "search": [
+            "skin flushing",
+            "flushing",
+            "blushed skin",
+            "reddish skin"
+        ]
+    },
+    {
+        "label": "Skin Macules - red flat patches/rashes of various size on skin",
+        "search": [
+            "skin macules",
+            "rash",
+            "red patches"
+        ]
+    },
+    {
+        "label": "Skin Pain with Dermatitis",
+        "search": [
+            "paresthesias or pain along skin dermatomes",
+            "paresthesias",
+            "skin dermatomes",
+            "dermatitis"
+        ]
+    },
+    {
+        "label": "Skin Papules - raised areas of skin less than 1 centimeter (in diameter)",
+        "search": [
+            "skin papules",
+            "bumps",
+            "red bumps"
+        ]
+    },
+    {
+        "label": "Skin Pustules - small bumps on the skin containing fluid or pus",
+        "search": [
+            "skin pustules",
+            "small bumps",
+            "bumps"
+        ]
+    },
+    {
+        "label": "Sleepy or Drowsy",
+        "search": [
+            "sleepy",
+            "sleepiness",
+            "drowsiness",
+            "drowsy"
+        ]
+    },
+    {
+        "label": "Sneezing",
+        "search": [
+            "sneezing",
+            "sneeze"
+        ]
+    },
+    {
+        "label": "Snoring",
+        "search": [
+            "snoring",
+            "apnea"
+        ]
+    },
+    {
+        "label": "Sore throat (or Throat pain)",
+        "search": [
+            "throat pain",
+            "sore throat",
+            "pain in throat",
+            "throat is sore"
+        ]
+    },
+    {
+        "label": "Spine Pain in a specific area (localized)",
+        "search": [
+            "localized spine pain",
+            "spine pain"
+        ]
+    },
+    {
+        "label": "Stool Incontinence",
+        "search": [
+            "stool incontinence",
+            "soiling",
+            "soiled"
+        ]
+    },
+    {
+        "label": "Straining when Urinating",
+        "search": [
+            "strain Stream",
+            "strain to urinate",
+            "straining when peeing",
+            "straining when urinating"
+        ]
+    },
+    {
+        "label": "Swallowing Pain",
+        "search": [
+            "swallow pain",
+            "swallowing pain",
+            "pain when swallowing",
+            "pain with swallowing",
+            "odynophagia"
+        ]
+    },
+    {
+        "label": "Swelling of lips, tongue or throat",
+        "search": [
+            "swelling of lip",
+            "swelling of tongue",
+            "lip swelling",
+            "tongue swelling",
+            "throat swelling"
+        ]
+    },
+    {
+        "label": "Swelling of the legs (Leg swelling)",
+        "search": [
+            "swelling on your legs",
+            "leg swelling",
+            "peripheral edema"
+        ]
+    },
+    {
+        "label": "Swelling, Pain or Redness of the Tongue",
+        "search": [
+            "swelling of tongue",
+            "pain in tongue",
+            "redness of tongue",
+            "tongue pain",
+            "tongue swelling",
+            "tongue redness"
+        ]
+    },
+    {
+        "label": "Temporal Headache - headaches in the side(s) of the head or behind/around the eye",
+        "search": [
+            "temporal (or behind/around the eye) headache",
+            "temporal headache"
+        ]
+    },
+    {
+        "label": "Testicle or Scrotal Pain",
+        "search": [
+            "testicular pain",
+            "testicle pain",
+            "scrotal pain",
+            "pain in testicles"
+        ],
+        "sexspecific": "Male"
+    },
+    {
+        "label": "Toe Pain",
+        "search": [
+            "toe pain",
+            "gout",
+            "pain in first metatarsophalangeal joint",
+            "toe"
+        ]
+    },
+    {
+        "label": "Urinary Incontinence (Urine soiling)",
+        "search": [
+            "urine soiling",
+            "urinary incontinence"
+        ]
+    },
+    {
+        "label": "Urinary Urgency (Urge Incontinence)",
+        "search": [
+            "urinary urgency",
+            "unexpected urge to pee",
+            "urge to urinate",
+            "urge incontinence"
+        ]
+    },
+    {
+        "label": "Vaginal Discharge",
+        "search": [
+            "abnormal vaginal discharge",
+            "vaginal discharge"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Vaginal Dryness",
+        "search": [
+            "vaginal dryness"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Vaginal Itching",
+        "search": [
+            "vaginal itching",
+            "vaginal itchiness"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Vaginal Pain or Soreness",
+        "search": [
+            "vaginal soreness",
+            "pain of vagina",
+            "vaginal pain"
+        ]
+    },
+    {
+        "label": "Vaginal bleeding or Spotting",
+        "search": [
+            "vaginal spotting or bleeding",
+            "vaginal spotting",
+            "vaginal bleeding"
+        ],
+        "sexspecific": "Female"
+    },
+    {
+        "label": "Vomiting",
+        "search": [
+            "vomiting",
+            "throwing up",
+            "puking"
+        ]
+    },
+    {
+        "label": "Vomiting Blood - red or black (coffee ground) in vomit",
+        "search": [
+            "hematemesis",
+            "vomiting",
+            "throwing up",
+            "puking"
+        ]
+    },
+    {
+        "label": "Weak Stream during Urination",
+        "search": [
+            "weak stream during urination",
+            "weak stream"
+        ]
+    },
+    {
+        "label": "Weakened Vision",
+        "search": [
+            "visual acuity",
+            "vision",
+            "eyesight",
+            "weak eyesight",
+            "eye sight",
+            "fuzzy vision"
+        ]
+    },
+    {
+        "label": "Weakness of Arms",
+        "search": [
+            "weakness or decreased sensation, localized to one hand",
+            "localized motor deficit of upper extremities",
+            "weakness associated with arrhythmia",
+            "weakness of arms",
+            "weakness of hands",
+            "weakness of shoulders"
+        ]
+    },
+    {
+        "label": "Weakness of Legs",
+        "search": [
+            "localized motor deficit of lower extremities",
+            "weakness of legs"
+        ]
+    },
+    {
+        "label": "Weakness or Decreased Sensation",
+        "search": [
+            "neurological motor or sensory deficit",
+            "weakness",
+            "decreased sensation"
+        ]
+    },
+    {
+        "label": "Weariness (Fatigue)",
+        "search": [
+            "weakness",
+            "weariness",
+            "weak",
+            "fatigue",
+            "tired"
+        ]
+    },
+    {
+        "label": "Weight Gain, unexplained",
+        "search": [
+            "Weight gain",
+            "unexplained weight gain",
+            "unexpected weight gain",
+            "unwanted weight gain"
+        ]
+    },
+    {
+        "label": "Weight Loss, unexplained",
+        "search": [
+            "Weight loss",
+            "unexplained weight loss",
+            "unexpected weight loss",
+            "unwanted weight loss"
+        ]
+    },
+    {
+        "label": "Wet Cough",
+        "search": [
+            "sputum production",
+            "mucus production",
+            "wet cough",
+            "cough",
+            "coughing"
+        ]
+    },
+    {
+        "label": "Wheezing",
+        "search": [
+            "wheezing",
+            "wheeze"
+        ]
+    },
+    {
+        "label": "Yellow Eyes",
+        "search": [
+            "yellow eyes",
+            "eyes are yellow",
+            "eyes being yellow"
+        ]
+    },
+    {
+        "label": "Yellow Skin (Jaundice)",
+        "search": [
+            "yellow skin",
+            "skin being yellow",
+            "jaundice",
+            "skin is yellow"
+        ]
+    },
+    {
+        "label": "Other"
+    }
+]

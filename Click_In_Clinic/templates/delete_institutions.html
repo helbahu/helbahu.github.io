@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class="mb-5">Delete Institution</h2>
+{% endblock %}
+
+{% block content %}
+
+<h3>Healthcare Professionals</h3>
+<div class="list_container_style1">
+{% for i in institutions %}
+    <div id="{{i.id}}-container">
+        <div class="row justify-content-between">
+            <button class="btn btn-{{my_theme}} btn-lg col" type="button" data-toggle="collapse" data-target="#collapse-{{i.id}}" aria-expanded="false" aria-controls="collapseExample">
+                Name of Institution: {{i.name}}
+            </button>
+            <button {% block action_btn_class %}class="btn btn-danger btn-lg col-sm-3 col-md-2 delete_institution_btn"{% endblock %} 
+            data-type="hcp"
+            id="{{i.id}}">
+                {% block action_btn_title %}
+                Delete
+                {% endblock %}
+            </button>           
+        </div>
+        <div class="collapse" id="collapse-{{i.id}}">
+            <div class="card card-body {{card_theme}}">
+                <div>
+                    <p>Address: {{i.address}}</p>
+                </div>
+            </div>
+        </div>
+    <hr>
+    </div>
+{% endfor %}
+{% endblock %}
+</div>

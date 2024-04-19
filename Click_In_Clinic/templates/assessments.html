@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<div class="row justify-content-between col-12 align-items-center mb-5">
+    {% if g.user.title %}
+        <h2>Patient Assessments</h2>
+    {% else %}
+        <h2>My Assessments</h2>
+    {% endif %}
+    
+</div>
+{% endblock %}
+
+{% block content %}
+    {% if assessments %}
+
+        <div class="list_container_style1">
+        {% for assessment in assessments %}
+        <div class="card {{card_theme}} assessment_card bg_hover_{{my_theme}}" id="{{assessment.id}}">
+            <div class="card-body row flex-nowrap">
+                <div class="col">
+                    <h5 class="card-title">For: {{assessment.patient.fullname}} | Doctor: {{assessment.doctor.fullname}} | Completed on: {{assessment.datetime.date()}}</h5>
+                    <p class="card-text">Chief Complaint: {{assessment.chief_complaint}}</p>    
+                </div>
+                {% if assessment.follow_up_questions %}
+                <div class="col-2 col-md-1"><img src="/static/notification_bell.png" class="notification_bell" alt=""></div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p><center>No Assessments</center></p>        
+    {% endif %}
+{% endblock %}
