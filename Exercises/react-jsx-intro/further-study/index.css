@@ -1,0 +1,29 @@
+.alert-body{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.alert-dark{
+    background-color: rgb(75, 75, 75);
+    color: white;
+}
+
+.alert-light{
+    background-color: rgb(222, 222, 222);
+}
+
+.alert-success{
+    background-color: rgb(206, 255, 179);
+}
+
+.alert-danger{
+    background-color: rgb(181, 0, 45);
+    color: white;
+}
+
+.alert-info{
+    background-color: rgb(188, 255, 253);
+}
