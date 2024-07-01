@@ -1,0 +1,16 @@
+.RecordTable {
+    background-color: rgb(216, 216, 216);
+    position: absolute;
+    left: 20px;
+    width: 200px;
+    min-height: 100px;
+}
+
+.RecordTable *{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.RecordTable table{
+    width: 100%;
+}

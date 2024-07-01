@@ -1,0 +1,34 @@
+.EightBall {
+    background-color: black;
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.EightBall-Answer {
+    color:white;
+}
+
+.EightBall-ResetBtn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 200px;
+}
+.EightBall-ResetBtn button{
+    background-color: rgb(34, 255, 111);
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.EightBall-ResetBtn button:hover{
+    background-color: rgb(202, 255, 221);
+    border-color: white;
+}
+

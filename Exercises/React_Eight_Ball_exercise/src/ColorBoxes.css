@@ -1,0 +1,36 @@
+.ColorBoxes {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.ColorBoxes-Row {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(210, 210, 210);
+    display: flex;
+    justify-content: space-evenly;
+}
+.ColorBoxes-Box {
+    background-color: rgb(116, 143, 251);
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.ColorBoxes-ChangeBtn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 200px;
+}
+
+.ColorBoxes-ChangeBtn button {
+    background-color: rgb(34, 255, 111);
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.ColorBoxes-ChangeBtn button:hover {
+    background-color: rgb(202, 255, 221);
+    border-color: white;
+}
