@@ -1,0 +1,10 @@
+.Coin-Btn {
+    width: 100px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: rgb(125, 125, 195);
+}
+.Coin-Btn:hover {
+    background-color: rgb(175, 175, 255);
+    border-color: white;
+}
