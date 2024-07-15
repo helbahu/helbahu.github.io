@@ -1,0 +1,48 @@
+.PopUp {
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    width: 50vw;
+    height: 20vh;
+    top: 20vh;
+    left: 25vw;
+    padding: 2vw;
+    border-radius: 1vw;
+}
+
+.PopUp-Background {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    background-color: rgba(0, 0, 0, 0.493);
+    animation: bgFadeIn 500ms;
+    animation-iteration-count: 1;
+}
+.PopUp-Cancel {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.PopUp-Cancel button{
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}
+.PopUp-Cancel button:hover{
+    background-color: rgb(255, 52, 52);
+}
+
+
+@keyframes bgFadeIn {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.493);
+    }
+
+}

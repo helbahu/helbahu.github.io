@@ -1,0 +1,17 @@
+.Box {
+    position: relative;
+    margin: 5px;
+    /* background-color: turquoise; */
+}
+.Box-DeleteBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    font-size: 0.5em;
+}

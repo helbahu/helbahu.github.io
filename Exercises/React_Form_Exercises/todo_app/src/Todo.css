@@ -1,0 +1,35 @@
+.Task {
+    background-color: rgb(205, 205, 205);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 30px;
+    border-radius: 10px;
+}
+.Task-DeleteBtn {
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.Task-DeleteBtn:hover {
+    background-color: rgb(255, 81, 81);
+    font-size: 1.1em;
+}
+.Task-EditBtn {
+    text-align: center;
+    background-color: rgb(0, 108, 36);
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    margin: 5px;
+}
+.Task-EditBtn:hover {
+    background-color: rgb(0, 207, 69);
+    font-size: 1.1em;
+}

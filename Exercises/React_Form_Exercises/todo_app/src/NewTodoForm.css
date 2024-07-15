@@ -1,0 +1,24 @@
+.NewTodoForm {
+    background-color: rgb(192, 192, 192);
+    height: 50px;
+    font-size: 2em;
+    padding: 10px;
+}
+.NewTodoForm input{
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.NewTodoForm button{
+    font-size: 0.8em;
+    margin-left: 40px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    background-color: green;
+}
+.NewTodoForm button:hover{
+    font-size: 0.9em;
+    background-color: rgb(0, 233, 0);
+}
+
