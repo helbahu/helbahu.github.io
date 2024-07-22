@@ -1,0 +1,39 @@
+.CardDeck {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.CardDeck-buttons {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly
+}
+.CardDeck-buttons button {
+    padding: 5px;
+    width: 140px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+.CardDeck-container {
+    width: 300px;
+}
+
+.CardDeck-NewDeckBtn {
+    background-color: rgb(95, 95, 176);
+}
+.CardDeck-NewDeckBtn:hover {
+    background-color: rgb(170, 170, 255);
+}
+.CardDeck-Disabled {
+    background-color: rgb(176, 176, 176);
+}
+
+
+.CardDeck-DrawBtn {
+    background-color: rgb(72, 153, 72);
+}
+.CardDeck-DrawBtn:hover {
+    background-color: rgb(137, 255, 137);
+}
