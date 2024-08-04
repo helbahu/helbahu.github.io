@@ -1,0 +1,31 @@
+.VendingMachine {
+    display: flex;
+    justify-content: center;
+}
+
+.VendingMachine-Image{
+    background-image: url('https://media.istockphoto.com/vectors/vending-maching-in-red-and-blue-color-vector-id654597798?k=6&m=654597798&s=612x612&w=0&h=dOVLWvIN6pkiOxDGXoXiS3lX_xrpcSfEwgaxttuKKqI=');
+    background-size: contain;
+    width: 400px;
+    height: 650px;
+}
+.VendingMachine-List {
+    border: black solid 3px;
+    padding: 20px;
+    height: 500px;
+    overflow: auto;
+}
+
+
+.VendingMachine ul{
+    list-style: none;
+    font-size: 2em;
+}
+
+ul a {
+    color: black;
+    text-decoration: none;
+}
+ul a:hover {
+    color: rgb(65, 110, 157);
+}
