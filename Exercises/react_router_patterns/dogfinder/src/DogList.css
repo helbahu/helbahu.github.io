@@ -1,0 +1,9 @@
+.DogList a {
+    color:rgb(0, 0, 46);
+    text-decoration: none;
+    font-size: 1.4em;
+}
+.DogList a:hover {
+    color:blue;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.ColorForm {
+    display: flex;
+    justify-content: center;
+}
+.ColorForm form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 2em;
+}
+.ColorForm-Name{
+    font-size: 0.8em;
+    padding: 5px;
+    margin: 10px;
+}
+.ColorForm button{
+    margin: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: rgb(68, 171, 255);
+    width: 100%;
+    font-size: 0.8em;
+}
+.ColorForm button:hover{
+    background-color: rgb(165, 214, 255);
+}
