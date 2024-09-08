@@ -1,0 +1,48 @@
+.Header-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.Header-Container button{
+    background-color: #2e9ac8;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.Header-Container button:Hover{
+    background-color: #51cbff;
+}
+.Header-Container .Company-Delete-Btn, .Header-Container .User-Delete-Btn, .Header-Container .Job-Delete-Btn {
+    background-color: #FF1654;
+}
+.Header-Container .Company-Delete-Btn:hover, .Header-Container .User-Delete-Btn:hover, .Header-Container .Job-Delete-Btn:hover {
+    background-color: #ff7a9e;
+}
+
+.Header-Container .PopupFilterForm-Cancel-Btn {
+    width: 40px;
+    height: 40px;
+    margin-top: 0px;
+    border-radius: 100%;
+    color: white;
+    background-color: #FF1654;
+}
+.Header-Container .PopupFilterForm-Cancel-Btn:hover {
+    background-color: #ff7a9e;
+}
+
+.Header {
+    font-size: 1.3em;
+    width: 60%;
+}
+.Header-Fringe {
+    width: 20%;
+}
+
+@media (max-width:600px) {
+    .Header-Container button{
+        padding: 3px 5px;
+        font-size: 0.6em;
+    }
+
+}

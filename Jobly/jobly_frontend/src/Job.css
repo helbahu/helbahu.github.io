@@ -1,0 +1,21 @@
+.Job {
+    margin: 40px;
+    padding: 20px;
+    min-width: 80vw;
+    color: black;
+    background-color: #f3ffbd80;
+}
+
+.Job button {
+    background-color: #2e9ac8;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.Job button:hover {
+    background-color: #51cbff;
+}
+
+.Job-Container {
+    display: flex;
+    justify-content: space-evenly;
+}

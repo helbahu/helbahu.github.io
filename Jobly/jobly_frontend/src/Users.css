@@ -1,0 +1,42 @@
+.Users {
+    min-width: 80vw;
+    margin: 40px;
+    margin-bottom: 0px;
+    padding: 20px;
+    color: black;
+    background-color: #f3ffbd80;
+}
+.Users-List {
+    height: 60vh;
+    overflow: auto;
+}
+
+.Users-User {
+    background-color: #70C1B3;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    color: black;
+}
+.Users-User *{
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.Users-User:hover{
+    background-color: #B2DBBF;
+}
+
+@media (max-width: 600px) {
+    .Users-User * {
+        margin-right: 50%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+        
+}

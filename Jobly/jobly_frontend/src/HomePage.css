@@ -1,0 +1,10 @@
+.HomePage {
+    margin: 150px;
+    padding: 20px;
+    min-width: 80vw;
+    border-radius: 10px;
+    color: black;
+    background-color: #f3ffbd80;
+    font-size: 2em;
+
+}

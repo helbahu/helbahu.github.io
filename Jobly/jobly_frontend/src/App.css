@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/000/598/409/original/light-blue-purple-vector-low-poly-crystal-background-polygon-de.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-Container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1150px){
+  body {
+    background-size: auto 100vh;
+  }
+}

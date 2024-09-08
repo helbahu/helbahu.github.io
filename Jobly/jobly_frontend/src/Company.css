@@ -1,0 +1,45 @@
+.Company {
+    margin: 40px;
+    margin-bottom: 0px;
+    padding: 20px;
+    min-width: 80vw;
+    color: black;
+    background-color: #f3ffbd80;
+}
+.Company-Jobs {
+    height: 35vh;
+    overflow: auto;
+}
+.Company-Job {
+    background-color: grey;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    color:black;
+}
+.Company-Job:hover{
+    color: rgb(34, 34, 34);
+}
+
+
+.Company-Container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.Company-Info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Company-Info-Containers {
+    margin: 5px 20px;
+}
+
+@media (max-width:600px) {
+    .Company-Info {
+        flex-wrap: wrap;
+    }
+        
+}

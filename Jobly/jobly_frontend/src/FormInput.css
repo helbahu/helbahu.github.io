@@ -1,0 +1,11 @@
+.FormInput-Label {
+    text-align: left;
+    font-size: 0.7em;
+}
+.FormInput-Input {
+    width: 100%;
+}
+.FormInput-Select select{
+    width: 100%;
+    font-size: 1em;
+}

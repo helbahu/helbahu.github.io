@@ -1,0 +1,17 @@
+.User {
+    margin: 40px;
+    padding: 20px;
+    min-width: 80vw;
+    color: black;
+    background-color: #f3ffbd80;
+}
+.User a{
+    color: black;
+}
+.User a:hover{
+    color: rgb(34, 34, 34);
+}
+.User-Container {
+    display: flex;
+    justify-content: space-evenly;
+}

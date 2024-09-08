@@ -1,0 +1,11 @@
+.ErrorMessage {
+    position: absolute;
+    top: 10vh;
+    left: 2vw;
+    min-width: 40vw;
+    background-color: rgb(117, 0, 0);
+    color: white;
+    padding: 5px 15px;
+    text-align: left;
+    border-radius: 10px;
+}

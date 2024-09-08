@@ -1,0 +1,31 @@
+.PopupFilterForm {
+    background-color: #247BA0;
+    width: 60vw;
+    position: absolute;
+    top: 30vh;
+    left: 0vw;
+    right: 0vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    padding: 20px 80px;
+    color: white;
+}
+.PopupFilterForm button {
+    background-color: #2e9ac8;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.PopupFilterForm button:hover {
+    background-color: #51cbff;
+
+}
+
+@media (max-width:600px) {
+    .PopupFilterForm {
+        width: 90vw;
+        padding: 10px 40px;
+    }
+    
+}

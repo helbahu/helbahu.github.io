@@ -1,0 +1,26 @@
+.NavBar {
+    background-color: #247BA0;
+    /* height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; */
+}
+
+.NavBar a, .NavBar .Logout {
+    font-size: 1.2em;
+    color: #B2DBBF;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.NavBar a:hover, .NavBar .Logout:hover {
+    cursor: pointer;
+    color: #70C1B3;
+    text-decoration: none;
+}
+.NavBar a.active, .NavBar a.active:hover {
+    color: #F3FFBD;
+}
+.NavBar .NavBar-Brand {
+    font-size: 2em;
+} 
+

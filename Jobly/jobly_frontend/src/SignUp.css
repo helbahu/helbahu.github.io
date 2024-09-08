@@ -1,0 +1,67 @@
+.SignUp {
+    background-color: #f3ffbd80;
+    color: black;
+    width: 60vw;
+    margin: 40px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.SignUp form{
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+.SignUp form input{
+    margin: 5px 20px;
+    font-size: 1em;
+    width: 90%;
+}
+
+.SignUp form select{
+    margin: 5px 20px;
+    font-size: 1em;
+    width: 90%;
+}
+
+.SignUp form button{
+    align-self: center;
+    font-size: 1em;
+    border-radius: 8px;
+    padding: 5px;
+    min-width: 25%;
+    margin: 20px;
+    background-color: #2e9ac8;
+}
+.SignUp form button:hover{
+    background-color: #51cbff;
+}
+.SignUp form .AddProfileForm-Cancel-Btn, .SignUp form .UpdateUserForm-Cancel-Btn {
+    background-color: #FF1654;
+}
+.SignUp form .AddProfileForm-Cancel-Btn:hover {
+    background-color: #ff7a9e;
+}
+
+@media (max-width:600px) {
+    .SignUp form input{
+        font-size: 0.7em;
+    }
+    
+    .SignUp form select{
+        font-size: 0.7em;
+    }
+    
+    .SignUp form button{
+        font-size: 0.7em;
+        margin: 5px;
+    }
+
+    .SignUp {
+        width: 90vw;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+
+}
