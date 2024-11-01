@@ -1,0 +1,25 @@
+.WebhookListener-Modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30vw;
+    background-color: rgb(186, 186, 186);
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 2;
+}
+.WebhookListener-Modal-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.WebhookListener-Modal-Header button{
+    background-color: rgb(255, 73, 73);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.WebhookListener-Modal-Header button:hover{
+    background-color: rgb(250, 142, 142);
+
+}
