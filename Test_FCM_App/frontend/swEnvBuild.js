@@ -2,8 +2,6 @@
 require('dotenv').config();     
 const fs = require('fs');
 
-console.log("ENV VARZ = ",process.env.REACT_APP_MEASUREMENT_ID);
-
 fs.writeFileSync(
   './public/swenv.js',
   `
