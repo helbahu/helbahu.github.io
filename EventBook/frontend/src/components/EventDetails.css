@@ -1,0 +1,114 @@
+.EventDetails {
+    margin-top: 50px;
+    /* font-size: 1.5rem; */
+    padding: 30px 40px 40px 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.149);
+    width: 80vw;
+    max-height: 75vh;
+
+}
+.EventDetails-Container2 {
+    text-align: left;
+
+}
+
+.EventDetails-Container1 {
+    overflow: auto;
+    max-height: 60vh;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.EventDetails-CreatedBy {
+    display: flex;
+    justify-content: space-between;
+
+}
+.EventDetails-CreatedBy > div{
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+
+.EventDetails-BookEventButton, .EventDetails-CancelEventButton {
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.EventDetails-BookEventButton {
+    background-color: rgb(39, 156, 84);
+}
+.EventDetails-BookEventButton:hover {
+    background-color: rgb(54, 226, 120);
+}
+
+.EventDetails-CancelEventButton {
+    background-color: rgb(255, 102, 0);
+}
+.EventDetails-CancelEventButton:hover {
+    background-color: rgb(252, 146, 75);
+}
+
+
+.EventDetails-Events-Container {
+    background-color: rgba(128, 128, 128, 0.551);
+    padding: 20px;
+    list-style: none;
+    max-height: 25vh;
+    overflow: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+.EventDetails-Events-Container li {
+    background-color: #212529;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    transition: all 200ms;
+}
+.EventDetails-Events-Container li:hover{
+    background-color: #353a3f;
+    transition: all 200ms;
+}
+.EventDetails-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.EventDetails-Header button{
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.EventDetails-Header .Delete-Button {
+    font-weight: bold;
+    background-color: rgb(255, 102, 0);
+}
+.EventDetails-Header .Delete-Button:hover {
+    background-color: rgb(252, 146, 75);
+}
+.EventDetails-Header .Edit-Button {
+    background-color: rgb(39, 156, 84);
+}
+.EventDetails-Header .Edit-Button:hover {
+    background-color: rgb(54, 226, 120);
+}
+
+@media (max-width:900px) {
+    .EventDetails {
+        padding: 15px 20px 20px 20px;
+        width: 90vw;
+    
+    }
+    .EventDetails-CreatedBy {
+        flex-wrap: wrap;
+    }
+    .EventDetails-CreatedBy > div{
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;    
+    }
+            
+}

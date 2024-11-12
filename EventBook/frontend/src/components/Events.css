@@ -1,0 +1,41 @@
+.Events {
+    margin-top: 50px;
+    /* font-size: 1.5rem; */
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.149);
+    width: 80vw;
+}
+.Events-Event {
+    background-color: #212529;
+    color: white;
+    text-align: left;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: all 200ms;
+}
+.Events-Event:hover {
+    background-color: #353a3f;
+    transition: all 200ms;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.Events-Container {
+    max-height: 60vh;
+    overflow: auto;
+    margin: 20px 10px;
+    padding: 10px;
+}
+
+@media (max-width:900px) {
+    .Events {
+        padding: 5px;
+        width: 90vw;
+    }
+    
+}

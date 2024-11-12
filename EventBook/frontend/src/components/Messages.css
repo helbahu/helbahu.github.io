@@ -1,0 +1,23 @@
+.Messages {
+    padding: 10px 20px;
+    position: absolute;
+    top: 11vh;
+    right: 1vw;
+    width: 40vw;
+    border-radius: 5px;
+    text-align: left;
+}
+.Messages li{
+    list-style: none;
+}
+
+@media (max-width:800px) {
+    .Messages {
+        width: 60vw;
+    }
+}
+@media (max-width:600px) {
+    .Messages {
+        width: 100vw;
+    }
+}

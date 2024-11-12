@@ -1,0 +1,55 @@
+.NewEvent-AddHost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.NewEvent-AddHost button{
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: rgb(142, 142, 220);
+    padding: 10px;
+    width: 20%;
+}
+.NewEvent-AddHost button:hover{
+    background-color: rgb(191, 191, 255);
+}
+.NewEvent-Hosts {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: rgba(0, 0, 0, 0.444);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.NewEvent-Hosts > div {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.444);
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.NewEvent-Hosts > div >span {
+    margin-right: 10px;
+}
+.NewEvent-Hosts > div >button {
+    background-color: rgb(255, 66, 66);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.NewEvent-Hosts > div >button:hover {
+    background-color: rgb(255, 125, 125);
+}
+
+
+@media (max-width:900px) {
+    .NewEvent-AddHost button{
+        margin-left: 10px;
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+    
+
+}

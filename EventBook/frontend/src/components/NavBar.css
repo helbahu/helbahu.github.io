@@ -1,0 +1,69 @@
+.NavBar {
+    width: 100vw;
+    height: 10vh;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background-color: rgba(57, 57, 57, 0.481);
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavBar-Brand {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+}
+.NavBar-Brand *{
+    margin: auto;
+    margin-right: 20px;
+}
+
+.NavBar-Links {
+    padding-left: 20px;
+}
+
+.NavBar-Links button {
+    background:none;
+    border: none;
+}
+
+.NavBar-Links a, .NavBar-Links button {
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    font-size: 1.8rem;
+}
+.NavBar-Links a:hover, .NavBar-Links button:hover {
+    color: rgb(157, 208, 255);
+}
+.NavBar-Links a.active {
+    color: rgb(130, 189, 244);
+}
+
+
+
+@media (max-width:900px) {
+    .NavBar-Links {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .NavBar-Links a, .NavBar-Links button {
+        width: 100%;
+        transition: all 200ms;
+    }
+    .NavBar-Links a:hover, .NavBar-Links button:hover {
+        background-color: #353a3f;
+        transition: all 200ms;
+    }
+                
+}
+
+

@@ -1,0 +1,96 @@
+.Profile {
+    margin-top: 50px;
+    /* font-size: 1.5rem; */
+    padding: 30px 40px 40px 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.149);
+    width: 80vw;
+    max-height: 75vh;
+
+}
+.Profile-Container {
+    overflow: auto;
+    max-height: 60vh;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+/* .EventDetails-CreatedBy {
+    display: flex;
+    justify-content: space-between;
+    
+} */
+
+.Profile-Events-Container {
+    display: flex;
+    justify-content: space-between;
+}
+.Profile-Events-Container > div{
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+
+.Profile-Bookings-Container, .Profile-CreatedEvents-Container {
+    background-color: rgba(128, 128, 128, 0.551);
+    padding: 20px;
+    list-style: none;
+    max-height: 25vh;
+    overflow: auto;
+    border-radius: 5px;
+}
+.Profile-Bookings-Container li, .Profile-CreatedEvents-Container li{
+    background-color: #212529;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    transition: all 200ms;
+}
+.Profile-Bookings-Container li:hover, .Profile-CreatedEvents-Container li:hover{
+    background-color: #353a3f;
+    transition: all 200ms;
+}
+
+
+.Profile-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.Profile-Header button{
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.Profile-Header .Delete-Button {
+    font-weight: bold;
+    background-color: rgb(255, 102, 0);
+}
+.Profile-Header .Delete-Button:hover {
+    background-color: rgb(252, 146, 75);
+}
+.Profile-Header .Edit-Button {
+    background-color: rgb(39, 156, 84);
+}
+.Profile-Header .Edit-Button:hover {
+    background-color: rgb(54, 226, 120);
+}
+
+
+
+
+@media (max-width:900px) {
+    .Profile {
+        width: 95vw;    
+    }
+    .Profile-Events-Container {
+        flex-wrap: wrap;
+    }    
+    .Profile-Events-Container > div{
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;    
+    }
+        
+}

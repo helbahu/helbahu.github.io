@@ -1,0 +1,64 @@
+.Form {
+    margin-top: 50px;
+    font-size: 1.5rem;
+    padding: 30px 40px 40px 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.149);
+    width: 70vw;
+    max-height: 75vh;
+
+}
+.Form form {
+    max-height: 60vh;
+    overflow: auto;
+    padding: 0px 20px;
+}
+
+.Form-Button {
+    width: 30vw;
+    margin: 40px;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 106, 46, 0.804);
+    color: white;
+    border: black 2px solid;
+
+}
+
+.Form-Button:hover {
+    background-color: rgba(0, 203, 88, 0.804);
+}
+
+.Form-Title {
+    text-align: left;
+}
+
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background:  rgb(39, 39, 39); /* color of the scroll thumb */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:  rgb(80, 80, 80); /* color of the scroll thumb */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+@media (max-width:900px) {
+    .Form {
+        width: 90vw;
+        padding: 15px 20px 20px 20px;
+
+    }
+    
+    
+
+
+}
