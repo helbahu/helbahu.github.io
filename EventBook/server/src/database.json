@@ -1,0 +1,166 @@
+{
+    "users": [
+        {
+            "name": "Bob Jones",
+            "email": "bob.jones.testmail@gmail.com",
+            "dateOfBirth":"Jan 1, 1996",
+            "bio":  "Hey, I'm Bob. As a software developer, I love solving complex problems. In my free time, I enjoy cycling and discovering new coffee shops.",
+            "password": "password123"
+        },
+        {
+            "name": "Alice Johnson",
+            "email": "alicej@fakemail.com",
+            "dateOfBirth": "February 5 1990",
+            "bio": "Hi, I'm Alice. I love painting and exploring art museums. I often spend weekends creating new pieces or visiting galleries to find inspiration.",
+            "password": "apple$4567"
+        },
+        {
+            "name": "John Smith",
+            "email": "jsmith@fakemail.com",
+            "dateOfBirth": "June 15 1985",
+            "bio": "I'm John, a software developer with a passion for hiking. I enjoy exploring new trails and capturing the beauty of nature through photography.",
+            "password": "banana!789"
+        },
+        {
+            "name": "Emily Davis",
+            "email": "emilyd@fakemail.com",
+            "dateOfBirth": "December 22 1992",
+            "bio": "Emily here! I enjoy reading and writing mystery novels. My favorite pastime is crafting intricate plots that keep readers on the edge of their seats.",
+            "password": "grape#346"
+        },
+        {
+            "name": "Robert Brown",
+            "email": "rbrown@fakemail.com",
+            "dateOfBirth": "March 10 1988",
+            "bio": "Hey, I'm Robert. I play the guitar and love rock music. I perform at local venues and enjoy the energy of live performances.",
+            "password": "pear%5566"
+        },
+        {
+            "name": "Mia Thompson",
+            "email": "miat@fakemail.com",
+            "dateOfBirth": "October 7 1994",
+            "bio": "Mia here. I'm a coffee enthusiast and a yoga instructor. I love starting my day with a strong brew and a good stretch.",
+            "password": "peach&900"
+        },
+        {
+            "name": "Amy Williams",
+            "email": "amyw@fakemail.com",
+            "dateOfBirth": "April 12 1991",
+            "bio": "Hi, I'm Amy. I'm a graphic designer who loves experimenting with new styles. I spend my free time exploring nature trails.",
+            "password": "cherry#7654"
+        },
+        {
+            "name": "Jenna Morrison",
+            "email": "jennam@fakemail.com",
+            "dateOfBirth": "November 23 1984",
+            "bio": "I'm Jenna, a busness owner and marketing manager with a knack for strategic campaigns. I have created multiple businesses from the ground up and made them into multi-million dollar successes. Outside of work, I enjoy yoga and reading historical fiction.",
+            "password": "mango!4321"
+        },
+        {
+            "name": "Kevin Neilson",
+            "email": "kevinn@fakemail.com",
+            "dateOfBirth": "May 8 1983",
+            "bio": "Hey, I'm Kevin. As a data scientist, I thrive on analyzing trends. In my downtime, I love baking and trying out new recipes.",
+            "password": "melon%6789"
+        },
+        {
+            "name": "Lamar Davis",
+            "email": "lamard@fakemail.com",
+            "dateOfBirth": "September 13 1990",
+            "bio": "Hey, I'm Lamar. I'm a freelance web developer who loves coding and creating innovative solutions. In my downtime, I enjoy playing basketball and exploring new tech gadgets.",
+            "password": "berry$3847"
+        },
+        {
+            "name": "Nora Black",
+            "email": "noraBlack@fakemail.com",
+            "dateOfBirth": "Mar 11 1988",
+            "bio": "Hey, I'm Nora. I'm a professional chef that opened my own bakery, where I sell cakes, pies, cookies, bread, and meat pies.",
+            "password": "tangerine!1111"
+        }
+
+    ],
+    "events": [
+        {
+            "title": "Virtual Yoga Class",
+            "description": "Join our virtual yoga class to relax and unwind with expert instructors. Perfect for all levels.",
+            "price": 15.00,
+            "dateTime": "Dec 5, 2024, 09:00",
+            "where": "Online - Zoom",
+            "hosts": ["671804b6025217467aadef6b"],
+            "maxNumberOfAttendees": 100,
+            "createdBy": "671804b6025217467aadef6b"
+        },
+        {
+            "title": "Tech Talk: Future of AI",
+            "description": "Dive into the future of AI in this engaging tech talk. Explore innovations and applications with industry experts.",
+            "price": 25.00,
+            "dateTime": "Jan 15, 2025, 14:00",
+            "where": "456 Innovation Dr., Toronto, Canada",
+            "hosts": ["671803ce8f6e515d5abf43d3","6718042d025217467aadef65"],
+            "maxNumberOfAttendees": 400,
+            "createdBy": "671803ce8f6e515d5abf43d3"
+        },
+        {
+            "title": "Baking Basics Workshop",
+            "description": "Learn the fundamentals of baking in this hands-on workshop. Perfect for beginners and baking enthusiasts.",
+            "price": 20.00,
+            "dateTime": "Feb 10, 2025, 11:00",
+            "where": "34 Maple St., Toronto, Canada",
+            "hosts": ["671810ffc627070a0db7fb6d"],
+            "maxNumberOfAttendees": 60,
+            "createdBy": "671810ffc627070a0db7fb6d"
+        },
+        {
+            "title": "Online Coding Bootcamp",
+            "description": "Boost your coding skills in our intensive online bootcamp. Suitable for all skill levels, from beginner to advanced.",
+            "price": 50.00,
+            "dateTime": "Mar 2, 2025, 10:00",
+            "where": "Online - Skype",
+            "hosts": ["6718042d025217467aadef65"],
+            "maxNumberOfAttendees": 1000,
+            "createdBy": "6718042d025217467aadef65"
+        },
+        {
+            "title": "Art and Wine Night",
+            "description": "Unleash your creativity in our art and wine night. Enjoy painting while sipping on your favorite wine.",
+            "price": 30.00,
+            "dateTime": "Apr 14, 2025, 18:00",
+            "where": "789 Creative Ave., Hamilton, Canada",
+            "hosts": ["671802488f6e515d5abf43d1"],
+            "maxNumberOfAttendees": 30,
+            "createdBy": "671802488f6e515d5abf43d1"
+        },
+        {
+            "title": "Painting for Beginners",
+            "description": "Dive into the world of painting with our beginners' class. Learn the basics and unleash your creativity in a fun and supportive environment.",
+            "price": 18.00,
+            "dateTime": "Nov 22, 2024, 14:00",
+            "where": "123 Art Studio, Hamilton, Canada",
+            "hosts": ["671802488f6e515d5abf43d1"],
+            "maxNumberOfAttendees": 50,
+            "createdBy": "671802488f6e515d5abf43d1"
+        },
+        {
+            "title": "Business Basics 1 - Building a Business from Scratch",
+            "description": "Learn the essential steps to build a business from the ground up. This workshop covers planning, funding, and launching strategies to get you started.",
+            "price": 35.00,
+            "dateTime": "Dec 5, 2024, 10:00",
+            "where": "Online - Zoom",
+            "hosts": ["671805e3cd7103bbc264052c", "671803ce8f6e515d5abf43d3"],
+            "maxNumberOfAttendees": 500,
+            "createdBy": "671805e3cd7103bbc264052c"
+        },
+        {
+            "title": "Business Basics 2 - Business Management, Marketing, and Advertising",
+            "description": "Build on your foundational knowledge with insights on business management, effective marketing strategies, and advertising techniques to grow your venture successfully.",
+            "price": 40.00,
+            "dateTime": "Jan 20, 2025, 15:00",
+            "where": "234 Business Blvd., Toronto, Canada",
+            "hosts": ["671805e3cd7103bbc264052c"],
+            "maxNumberOfAttendees": 500,
+            "createdBy": "671805e3cd7103bbc264052c"
+        }
+
+    ]
+
+}
