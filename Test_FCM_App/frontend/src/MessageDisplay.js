@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import {v4 as uuid} from 'uuid';
 
 import {onMessage} from 'firebase/messaging';
-import {initializeFCM, messaging} from './notification/firebase';
+import {initializeFCM} from './notification/firebase';
 
 
 const MessageDisplay = () => {
@@ -21,33 +21,41 @@ const MessageDisplay = () => {
   useEffect(() => {
     const subscribeToken = async () => {
       const token = localStorage.getItem("fcmToken");
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/subscribe-to-topic`,{token});
-      console.log("RES   =   ",res.data.message);
+      if(token){
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/subscribe-to-topic`,{token});
+        console.log("RES   =   ",res.data.message);
+      }
     }
 
     const initializeNotifications = async () => {
       // request notification permission and register the service worker
-      await initializeFCM();
+      const messaging = await initializeFCM();
+
       // event handler for incoming messages
-      onMessage(messaging, (m) => {
-        console.log("MESSAGE SENT!",m);
-        const title = m?.data?.title || m?.notification?.title;
-        const body = m?.data?.body || m?.notification?.body;
-        const icon = m?.data?.icon || m?.notification?.image;
-        const badge = m?.data?.badge;
+      if(messaging){
+        console.log("MESSAGING!!!",messaging);
+        onMessage(messaging, (m) => {
+          console.log("MESSAGE SENT!",m);
+          const title = m?.data?.title || m?.notification?.title;
+          const body = m?.data?.body || m?.notification?.body;
+          const icon = m?.data?.icon || m?.notification?.image;
+          const badge = m?.data?.badge;
 
-        setData(data => [...data,{title, body}]);
-        setIsModal(true);
+          setData(data => [...data,{title, body}]);
+          setIsModal(true);
 
-        new Notification(title || "Notification Title", {
-          icon,
-          body,
-          badge
+          new Notification(title || "Notification Title", {
+            icon,
+            body,
+            badge
+          });
+
         });
+        await subscribeToken();
 
-      });
-
-      await subscribeToken();
+    }else{
+      throw Error();
+    }
       
     }
     try{
