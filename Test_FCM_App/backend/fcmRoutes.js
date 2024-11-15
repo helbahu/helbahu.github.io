@@ -2,16 +2,7 @@ import express from 'express';
 
 const router = new express.Router();
 
-import firebaseAdmin from 'firebase-admin';
-import firebaseServiceAccount from './firebase-service-account.js';
-
-// Initialize Firebase app
-const firebaseApp = firebaseAdmin.initializeApp({
-  credential: firebaseAdmin.credential.cert(firebaseServiceAccount)
-});
-
-// Initialize Firebase messaging
-const messaging = firebaseApp.messaging();
+import { messaging } from './fcmApp.js';
 
 router.post("/subscribe-to-topic", async (req, res) => {
   try {
