@@ -68,21 +68,20 @@ router.post("/send-message", async (req, res) => {
 router.post("/send-messages", async (req, res) => {
   try {
     const messages = JSON.parse(req.body.messages);
+    console.log("Length   :   ",messages.length);
     console.log("MESSAGES LIST   :   ",messages);
     if(messages?.length){
       const sentMessages = [];
       for(const msg of messages){
-        const {title,body,icon,genre} = msg;
   
         const message = {
-          // token, // token is required
-          topic: genre || "all",
+          topic: "all", //msg.genre || "all",
           data: {
             ...msg,
-            title: title || "AfroWatch Notification",
-            body: body,
-            icon: icon || "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"
-    
+            title: "AfroWatch Notification",
+            body: msg.body || `Check out the new ${msg.genre} ${msg.content_type} "${msg.content_name}".`,
+            icon: msg.icon || msg.video_header_image_url || "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"
+
           }
         };
 
@@ -108,10 +107,10 @@ router.post("/send-messages", async (req, res) => {
     res.status(error?.status || 500).json({
       status: "error",
       message: error?.message || "Something went wrong",
-      error
 
     });
   }
+
 });
 
 
