@@ -80,7 +80,8 @@ router.post("/send-messages", async (req, res) => {
             ...msg,
             title: "AfroWatch Notification",
             body: msg.body || `Check out the new ${msg.genre} ${msg.content_type} "${msg.content_name}".`,
-            icon: msg.icon || msg.video_header_image_url || "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"
+            icon: msg.icon || msg.video_header_image_url || "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png",
+            date_uploaded: `${msg.date_uploaded}`
 
           }
         };
